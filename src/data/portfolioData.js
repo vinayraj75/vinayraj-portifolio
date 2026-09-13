@@ -12,7 +12,6 @@ export const personalInfo = {
   degree: "B.Tech — Artificial Intelligence & Machine Learning",
   academics: "2024 — 2028",
   year: "3rd Year",
-  cgpa: "7.6",
   languages: ["Telugu", "English"],
 
   resumeUrl: "/Chinnam_Vinay_Resume.pdf",
@@ -25,14 +24,13 @@ export const personalInfo = {
     email: import.meta.env.VITE_CONTACT_EMAIL || "",
   },
 
-  hackathonTeam: "DuoXtitans",
   careerGoal: "AI/ML Engineer",
 };
 
 export const currentStatus = {
   building: [
-    { title: "Smart Agriculture AI", desc: "Plant disease diagnosis & medicine advisory system" },
     { title: "Full Stack AI Apps", desc: "Integrating FastAPI microservices with modern frontends" },
+    { title: "AI-Powered Automation", desc: "Intelligent data pipelines and workflow optimization tools" },
   ],
   learning: [
     "Machine Learning & Deep Learning",
@@ -87,73 +85,33 @@ export const techStack = [
 
 export const projectsData = [
   {
-    id: "smart-crop-system",
-    title: "Smart Crop Recommendation & Leaf Disease Detection System",
-    category: "AI / Machine Learning",
-    tagline: "AI-powered agriculture solution assisting farmers with instant plant disease identification and treatment guidance.",
-    description: "An AI-powered agriculture solution designed to help farmers identify plant leaf diseases and receive useful recommendations.",
-    problem: "Farmers in rural regions often suffer catastrophic crop losses due to delayed diagnosis of leaf infections and lack of immediate access to agricultural experts, leading to improper chemical use and ballooning expenses.",
-    solution: "A computer vision and ML pipeline that accepts leaf photographs, performs disease classification, identifies pathogen symptoms, and presents a cost-effective treatment regimen along with precautionary steps.",
+    id: "face-emotion-detection",
+    title: "Face Emotion Detection",
+    category: "Computer Vision / AI",
+    tagline: "Real-time facial expression analysis and emotion classification pipeline from image and video streams.",
+    description: "Computer-vision application that detects facial expressions and classifies emotions from an image/video input.",
+    problem: "Interpreting nuanced human emotional cues from dynamic video feeds with varying lighting and angles requires low-latency face localization and reliable visual feature extraction.",
+    solution: "A computer vision and deep learning pipeline that detects facial bounding regions, extracts facial landmarks, and classifies expressions into primary emotion states in real-time.",
     workflow: [
-      { step: 1, title: "Image Capture", desc: "Farmer captures or uploads a leaf photograph through their smartphone or device." },
-      { step: 2, title: "AI Analysis", desc: "Computer vision model extracts spatial leaf features and patterns." },
-      { step: 3, title: "Classification", desc: "Determines whether the plant leaf is healthy or affected by a specific disease." },
-      { step: 4, title: "Symptom Retrieval", desc: "Correlates disease characteristics and stages with an agricultural knowledge base." },
-      { step: 5, title: "Remedy & Cost Estimation", desc: "Recommends exact medicinal treatments and calculates approximate medicine costs." },
-      { step: 6, title: "Precautions", desc: "Provides protective measures and field hygiene practices to prevent future spread." },
+      { step: 1, title: "Frame Acquisition", desc: "Captures static images or live video frames from webcam or media file." },
+      { step: 2, title: "Face Localization", desc: "Detects human faces and isolates region-of-interest (ROI) using spatial detectors." },
+      { step: 3, title: "Image Preprocessing", desc: "Converts facial crop to grayscale, normalizes dimensions, and performs pixel rescaling." },
+      { step: 4, title: "Feature Extraction", desc: "Extracts key spatial landmarks around eyes, eyebrows, and mouth contour." },
+      { step: 5, title: "Emotion Inference", desc: "Classifies expression into primary emotion categories (Happy, Neutral, Sad, Angry, Surprised)." },
+      { step: 6, title: "Overlay & Feedback", desc: "Renders real-time bounding box and confidence probability badge onto the video feed." },
     ],
     features: [
-      "Leaf image classification via Computer Vision",
-      "Accurate disease vs. healthy leaf identification",
-      "In-depth symptom breakdowns and disease explanations",
-      "Tailored treatment recommendations",
-      "Medicine cost estimation to prevent farmer exploitation",
-      "Practical preventative guidelines and precautions",
+      "Real-time facial expression and landmark detection",
+      "Multi-class emotion classification from live video or image input",
+      "Confidence probability scoring per emotion category",
+      "High-speed frame processing optimized with Python & OpenCV",
+      "Robust detection across diverse lighting conditions and angles",
+      "Clean visual bounding box and label rendering overlay",
     ],
-    technologies: ["Python", "Computer Vision", "Machine Learning", "TensorFlow", "FastAPI"],
+    technologies: ["Python", "Computer Vision", "AI/ML", "OpenCV", "TensorFlow"],
     github: "https://github.com/vinayraj75",
     demo: null,
-    status: "In Active Development",
-    featured: true,
-  },
-  {
-    id: "reuters-classification",
-    title: "Reuters News Classification",
-    category: "Deep Learning / NLP",
-    tagline: "Multi-class text classification model built with TensorFlow/Keras using the Reuters news dataset.",
-    description: "Built a multi-class text classification model with TensorFlow/Keras using the Reuters dataset; explored neural-network training, ReLU activation, epochs and one-hot encoded labels.",
-    problem: "Accurately categorizing high-throughput journalistic news wire texts into specific topic classes requires effective word-index representations and robust multi-class loss optimization.",
-    solution: "Trained a feedforward neural network in TensorFlow/Keras leveraging dense layers with ReLU activations, softmax multi-class output, categorical cross-entropy, and validation epoch tuning.",
-    features: [
-      "Reuters news wire text tokenization & vectorization",
-      "One-hot multi-class categorical encoding",
-      "Deep neural network training with ReLU activations",
-      "Validation tracking across multiple training epochs",
-    ],
-    technologies: ["Python", "TensorFlow", "Keras", "Deep Learning"],
-    github: "https://github.com/vinayraj75",
-    demo: null,
-    status: "Completed / Academic",
-    featured: true,
-  },
-  {
-    id: "ai-weather-prediction",
-    title: "AI Weather Prediction",
-    category: "Artificial Intelligence / Machine Learning",
-    tagline: "Intelligent atmospheric analysis and forecasting using historical meteorological datasets.",
-    description: "An AI/ML project focused on data-driven weather analysis and prediction using Python and AI/ML techniques.",
-    problem: "Complex climate shifts make raw sensory readings difficult to interpret locally without structured pattern analysis and algorithmic prediction.",
-    solution: "A data pipeline utilizing machine learning regression and classification to process atmospheric variables (humidity, pressure, temperature) and forecast weather trends.",
-    features: [
-      "Atmospheric dataset cleaning and normalization",
-      "Feature correlation analysis between temperature and barometric pressure",
-      "Time-series trend forecasting with ML models",
-      "Clean visual reporting of predicted conditions",
-    ],
-    technologies: ["Python", "Machine Learning", "AI", "Data Processing"],
-    github: "https://github.com/vinayraj75",
-    demo: null,
-    status: "Prototype / Academic Research",
+    status: "Completed / Active",
     featured: true,
   },
   {
@@ -181,10 +139,9 @@ export const projectsData = [
 export const hackathonsData = [
   {
     title: "Prakalp Hackathon",
-    team: "DuoXtitans",
     award: "3rd Prize Winner",
     category: "Innovation & Problem Solving",
-    description: "Competed as part of DuoXtitans to ideate, prototype, and defend an impactful technical solution against rigorous evaluation criteria.",
+    description: "Ideated, prototyped, and defended an impactful technical solution against rigorous evaluation criteria under strict competitive deadlines.",
     highlight: "Won 3rd Prize among competitive multi-college teams for technical viability and presentation.",
   }
 ];
@@ -264,9 +221,8 @@ export const certificationsData = [
 
 export const achievementsData = [
   {
-    title: "3rd Prize — Prakalp Hackthon",
+    title: "3rd Prize — Prakalp Hackathon",
     organization: "College-Level Hackathon",
-    team: "DuoXtitans",
     year: "2025 / 2026",
     summary: "Secured 3rd place for designing and pitching a high-utility technical prototype under tight hackathon time constraints.",
     badge: "Podium Finish",
@@ -280,7 +236,6 @@ export const educationData = [
     degree: "B.Tech in Artificial Intelligence and Machine Learning",
     period: "2024 — 2028",
     year: "3rd Year",
-    cgpa: "7.6",
     highlights: [
       "Rigorous coursework in Artificial Intelligence, Machine Learning, Deep Learning, and Python Development.",
       "Hands-on lab work in Data Structures, TensorFlow modeling, and REST API Integrations.",
@@ -317,7 +272,7 @@ export const focusAreas = [
   },
   {
     title: "Real-World AI Applications",
-    desc: "Applying technology directly to solve human challenges in agriculture, weather, and utilities.",
+    desc: "Applying technology directly to solve real-world problems through data intelligence and automation.",
     icon: "Sparkles",
   },
 ];

@@ -43,13 +43,13 @@ export default function HackathonSection() {
             </h3>
 
             <p className="text-sm sm:text-base text-slate-300 leading-relaxed mb-6 max-w-2xl">
-              Engineered and pitched a rapid technical solution as part of team <strong className="text-[#ef4444]">DuoXtitans</strong> under strict competitive deadlines, winning <span className="text-amber-300 font-bold">3rd Prize</span> against participating teams.
+              Engineered and pitched a rapid technical solution under strict competitive deadlines, winning <span className="text-amber-300 font-bold">3rd Prize</span> against participating teams.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-4 border-t border-white/10">
               <div className="p-3 rounded-xl bg-[#06090f]/70 border border-white/5">
-                <span className="text-[10px] font-mono text-slate-500 uppercase block">TEAM</span>
-                <span className="text-xs font-bold text-white font-display">DuoXtitans</span>
+                <span className="text-[10px] font-mono text-slate-500 uppercase block">EVENT</span>
+                <span className="text-xs font-bold text-white font-display">Prakalp Hackathon</span>
               </div>
               <div className="p-3 rounded-xl bg-[#06090f]/70 border border-white/5">
                 <span className="text-[10px] font-mono text-slate-500 uppercase block">RECOGNITION</span>

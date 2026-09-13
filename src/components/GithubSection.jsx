@@ -11,15 +11,15 @@ export default function GithubSection() {
   // Fallback repo showcase in case GitHub API rate limits or offline
   const fallbackRepos = [
     {
-      name: "Crop-Leaf-Disease-Detection",
-      description: "AI-powered agriculture solution assisting farmers with instant plant disease identification and treatment guidance.",
+      name: "FastAPI-ML-Microservices",
+      description: "High-performance asynchronous REST endpoints for machine learning model serving and inference.",
       language: "Python",
       stargazers_count: 0,
       html_url: "https://github.com/vinayraj75",
     },
     {
-      name: "AI-Weather-Prediction",
-      description: "Atmospheric weather forecasting model using data-driven machine learning algorithms.",
+      name: "Python-Data-Pipelines",
+      description: "Modular data cleaning, transformation, and statistical modeling workflows in Python.",
       language: "Python",
       stargazers_count: 0,
       html_url: "https://github.com/vinayraj75",

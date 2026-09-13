@@ -36,7 +36,7 @@ export default function Education() {
                     {edu.period}
                   </span>
                   <span className="text-xs font-mono text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">
-                    CGPA: {edu.cgpa} / 10
+                    {edu.year}
                   </span>
                 </div>
 

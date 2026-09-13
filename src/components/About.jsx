@@ -7,7 +7,7 @@ export default function About() {
   const infoCards = [
     { label: 'Degree', value: 'B.Tech — AIML', icon: GraduationCap, detail: '2024 — 2028 (3rd Year)' },
     { label: 'College', value: 'Ramachandra College of Eng.', icon: BookOpen, detail: 'Eluru, Andhra Pradesh' },
-    { label: 'Academic Standing', value: '7.6 CGPA', icon: Award, detail: 'Consistent Performer' },
+    { label: 'Specialization', value: 'AI & Machine Learning', icon: Award, detail: 'Engineering & Modeling' },
     { label: 'Base Location', value: 'Eluru, AP, India', icon: MapPin, detail: 'Open to Opportunities' },
   ];
 

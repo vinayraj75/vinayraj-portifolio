@@ -97,21 +97,153 @@
 }
 
 /* Light Mode Overrides for Glass Cards & Panels */
+/* Light Mode Overrides for Glass Cards & Panels */
 html.light .glass-panel {
-  background: rgba(255, 255, 255, 0.88);
-  border: 1px solid rgba(15, 23, 42, 0.09);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
 html.light .glass-card {
-  background: rgba(255, 255, 255, 0.88);
-  border: 1px solid rgba(15, 23, 42, 0.08);
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.06);
+  background: rgba(255, 255, 255, 0.96) !important;
+  border: 1px solid rgba(15, 23, 42, 0.09) !important;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.07) !important;
 }
 
 html.light .glass-card:hover {
-  border-color: rgba(239, 68, 68, 0.4);
-  box-shadow: 0 14px 40px -10px rgba(250, 204, 21, 0.15);
+  border-color: rgba(239, 68, 68, 0.4) !important;
+  box-shadow: 0 14px 40px -10px rgba(250, 204, 21, 0.18) !important;
+}
+
+/* =========================================================
+   LIGHT MODE TYPOGRAPHY & VISIBILITY OVERRIDES
+   Turns white and light slate text into deep dark black 
+   (#090d16 / #1e293b) while strictly preserving colored elements.
+   ========================================================= */
+
+html.light {
+  color: #090d16;
+}
+
+/* Headings in Light Mode */
+html.light h1,
+html.light h2,
+html.light h3,
+html.light h4,
+html.light h5,
+html.light h6 {
+  color: #090d16;
+}
+
+/* General Body Text */
+html.light p,
+html.light span:not([class*="text-"]):not([class*="bg-"]),
+html.light li:not([class*="text-"]),
+html.light label {
+  color: #1e293b;
+}
+
+/* Transform light/white text classes into dark black in light mode */
+html.light .text-white:not(.keep-white):not(.bg-clip-text) {
+  color: #090d16 !important;
+}
+
+html.light .text-slate-100:not(.keep-white):not(.bg-clip-text) {
+  color: #090d16 !important;
+}
+
+html.light .text-slate-200:not(.keep-white):not(.bg-clip-text) {
+  color: #1e293b !important;
+}
+
+html.light .text-slate-300:not(.keep-white):not(.bg-clip-text) {
+  color: #334155 !important;
+}
+
+html.light .text-slate-400:not(.keep-white):not(.bg-clip-text) {
+  color: #475569 !important;
+}
+
+html.light .text-slate-500:not(.keep-white):not(.bg-clip-text) {
+  color: #64748b !important;
+}
+
+/* Preserve gradient text transparency */
+html.light .bg-clip-text {
+  color: transparent !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+/* Preserve elements with keep-white */
+html.light .keep-white {
+  color: #ffffff !important;
+}
+
+/* Transform dark sub-boxes inside cards into elegant light containers */
+html.light .glass-card [class*="bg-[#06090f]"],
+html.light .glass-card [class*="bg-[#060a14]"],
+html.light .glass-card [class*="bg-[#070c18]"],
+html.light .glass-card [class*="bg-[#0a1426]"],
+html.light .glass-card [class*="bg-[#070d1a]"],
+html.light .glass-card [class*="bg-[#0b1220]"],
+html.light .glass-card [class*="bg-[#091122]"],
+html.light .glass-card [class*="bg-[#0c192f]"],
+html.light .glass-card [class*="bg-[#131b2e]"],
+html.light .glass-card [class*="bg-[#18160f]"],
+html.light .glass-card [class*="bg-[#151722]"],
+html.light .glass-card [class*="bg-[#121624]"],
+html.light .glass-card [class*="bg-[#0c162a]"],
+html.light .glass-card [class*="bg-white/5"],
+html.light .glass-card [class*="bg-white/10"],
+html.light [class*="bg-[#0c162a]"]:not(.keep-dark),
+html.light [class*="bg-[#091122]"]:not(.keep-dark) {
+  background-color: #ffffff !important;
+  border-color: rgba(15, 23, 42, 0.12) !important;
+}
+
+/* Light mode form inputs & textareas */
+html.light input,
+html.light textarea {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  border-color: rgba(15, 23, 42, 0.15) !important;
+  color: #090d16 !important;
+}
+
+html.light input::placeholder,
+html.light textarea::placeholder {
+  color: #94a3b8 !important;
+}
+
+/* Light mode borders */
+html.light [class*="border-white/5"],
+html.light [class*="border-white/10"],
+html.light [class*="border-white/20"] {
+  border-color: rgba(15, 23, 42, 0.08) !important;
+}
+
+/* Light mode section and footer backgrounds */
+html.light section[class*="bg-[#070c18]"] {
+  background-color: rgba(241, 245, 249, 0.7) !important;
+}
+
+html.light footer {
+  background-color: #f8fafc !important;
+  border-color: rgba(15, 23, 42, 0.08) !important;
+}
+
+/* Project Modal in Light Mode */
+html.light .project-modal-container {
+  background: #ffffff !important;
+  color: #090d16 !important;
+  border-color: rgba(250, 204, 21, 0.4) !important;
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.25) !important;
+}
+
+html.light .project-modal-container [class*="bg-[#060a14]"],
+html.light .project-modal-container [class*="bg-[#070d1a]"],
+html.light .project-modal-container [class*="bg-[#0a1426]"] {
+  background-color: rgba(15, 23, 42, 0.04) !important;
+  border-color: rgba(15, 23, 42, 0.08) !important;
 }
 
 /* Cyber grid background layer */

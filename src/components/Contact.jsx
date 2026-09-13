@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import { Mail, Send, CheckCircle2, MessageSquare, Sparkles, Copy, ArrowUpRight, FileDown } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData';
 import { GithubIcon, LinkedinIcon } from './Icons';
+import { useTheme } from '../utils/ThemeContext';
 
 export default function Contact() {
+  const { isDark } = useTheme();
   const [formState, setFormState] = useState({ name: '', email: '', message: '' });
   const [copied, setCopied] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -56,21 +58,25 @@ export default function Contact() {
                 download={personalInfo.resumeFileName}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl text-xs font-mono font-bold uppercase tracking-wider text-[#facc15] bg-[#0c162a] hover:bg-[#132342] border border-[#facc15]/40 transition-all hover:scale-105 shadow-[0_0_15px_rgba(250,204,21,0.2)]"
+                className={`inline-flex items-center gap-2 px-5 py-3.5 rounded-xl text-xs font-mono font-bold uppercase tracking-wider transition-all hover:scale-105 ${
+                  isDark
+                    ? 'text-[#facc15] bg-[#0c162a] hover:bg-[#132342] border border-[#facc15]/40 shadow-[0_0_15px_rgba(250,204,21,0.2)]'
+                    : 'text-[#090d16] bg-white hover:bg-slate-50 border border-slate-300 shadow-md hover:border-[#facc15]'
+                }`}
                 title="Download Resume PDF"
               >
                 <FileDown className="w-4 h-4 text-[#ef4444]" />
-                <span>Download Resume</span>
+                <span className={isDark ? 'text-[#facc15]' : 'text-[#090d16] font-bold'}>Download Resume</span>
               </a>
 
               <a
                 href={personalInfo.socials.linkedin}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl text-xs font-bold uppercase tracking-wider text-slate-900 bg-gradient-to-r from-[#facc15] via-[#fb923c] to-[#ef4444] hover:shadow-[0_0_25px_rgba(239,68,68,0.5)] transition-all hover:scale-105 active:scale-95"
+                className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl text-xs font-bold uppercase tracking-wider text-slate-900 bg-gradient-to-r from-[#facc15] via-[#fb923c] to-[#ef4444] hover:shadow-[0_0_25px_rgba(239,68,68,0.5)] transition-all hover:scale-105 active:scale-95 shadow-md"
               >
                 <LinkedinIcon className="w-4 h-4" />
-                <span>Connect on LinkedIn</span>
+                <span className="keep-white text-slate-900 font-bold">Connect on LinkedIn</span>
                 <ArrowUpRight className="w-3.5 h-3.5" />
               </a>
 
@@ -78,37 +84,55 @@ export default function Contact() {
                 href={personalInfo.socials.github}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl text-xs font-semibold uppercase tracking-wider text-slate-200 bg-[#0c162a] hover:bg-[#132342] border border-white/10 hover:border-[#facc15]/40 transition-all hover:scale-105"
+                className={`inline-flex items-center gap-2 px-5 py-3.5 rounded-xl text-xs font-semibold uppercase tracking-wider transition-all hover:scale-105 ${
+                  isDark
+                    ? 'text-slate-200 bg-[#0c162a] hover:bg-[#132342] border border-white/10 hover:border-[#facc15]/40'
+                    : 'text-[#090d16] bg-white hover:bg-slate-50 border border-slate-300 shadow-md hover:border-[#facc15]'
+                }`}
               >
                 <GithubIcon className="w-4 h-4 text-[#facc15]" />
-                <span>Follow on GitHub</span>
+                <span className={isDark ? 'text-slate-200' : 'text-[#090d16] font-bold'}>Follow on GitHub</span>
               </a>
 
               {personalInfo.socials.email && (
                 <a
                   href={`mailto:${personalInfo.socials.email}`}
-                  className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl text-xs font-semibold uppercase tracking-wider text-slate-200 bg-[#0c162a] hover:bg-[#132342] border border-white/10 hover:border-[#ef4444]/40 transition-all"
+                  className={`inline-flex items-center gap-2 px-5 py-3.5 rounded-xl text-xs font-semibold uppercase tracking-wider transition-all hover:scale-105 ${
+                    isDark
+                      ? 'text-slate-200 bg-[#0c162a] hover:bg-[#132342] border border-white/10 hover:border-[#ef4444]/40'
+                      : 'text-[#090d16] bg-white hover:bg-slate-50 border border-slate-300 shadow-md hover:border-[#ef4444]'
+                  }`}
                 >
                   <Mail className="w-4 h-4 text-[#ef4444]" />
-                  <span>Email Me</span>
+                  <span className={isDark ? 'text-slate-200' : 'text-[#090d16] font-bold'}>Email Me</span>
                 </a>
               )}
             </div>
 
             {/* Quick Copy Card */}
-            <div className="p-4 rounded-2xl bg-[#091122]/70 border border-white/5 flex items-center justify-between gap-4 max-w-md">
+            <div className={`p-4 rounded-2xl border flex items-center justify-between gap-4 max-w-md transition-all ${
+              isDark
+                ? 'bg-[#091122]/70 border-white/5'
+                : 'bg-white border-slate-300 shadow-md'
+            }`}>
               <div className="overflow-hidden">
-                <span className="text-[10px] font-mono text-slate-500 uppercase block">DIRECT LINKEDIN PROFILE</span>
-                <span className="text-xs font-mono text-slate-300 truncate block">
+                <span className="text-[10px] font-mono text-slate-500 uppercase block font-bold tracking-wider">DIRECT LINKEDIN PROFILE</span>
+                <span className={`text-xs font-mono truncate block font-semibold ${
+                  isDark ? 'text-slate-300' : 'text-[#090d16]'
+                }`}>
                   linkedin.com/in/chinnam-vinay-37a514355
                 </span>
               </div>
               <button
                 onClick={handleCopyLinkedIn}
-                className="p-2.5 rounded-xl bg-white/5 hover:bg-[#facc15]/20 text-slate-300 hover:text-[#facc15] transition-colors border border-white/5 shrink-0"
+                className={`p-2.5 rounded-xl border shrink-0 transition-colors ${
+                  isDark
+                    ? 'bg-white/5 hover:bg-[#facc15]/20 text-slate-300 hover:text-[#facc15] border-white/5'
+                    : 'bg-slate-100 hover:bg-slate-200 text-[#090d16] hover:text-[#facc15] border-slate-300 shadow-sm'
+                }`}
                 title="Copy LinkedIn URL"
               >
-                {copied ? <CheckCircle2 className="w-4 h-4 text-emerald-400" /> : <Copy className="w-4 h-4" />}
+                {copied ? <CheckCircle2 className="w-4 h-4 text-emerald-500" /> : <Copy className="w-4 h-4 text-slate-700 dark:text-slate-300" />}
               </button>
             </div>
           </div>

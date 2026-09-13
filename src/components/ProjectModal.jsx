@@ -20,7 +20,7 @@ export default function ProjectModal({ project, onClose }) {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 overflow-y-auto backdrop-blur-md bg-black/70 animate-in fade-in duration-200">
       <div
-        className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto bg-[#09101f] border border-[#facc15]/30 rounded-3xl p-6 sm:p-8 shadow-[0_20px_50px_rgba(0,0,0,0.8)] text-left"
+        className="project-modal-container relative w-full max-w-3xl max-h-[90vh] overflow-y-auto bg-[#09101f] border border-[#facc15]/30 rounded-3xl p-6 sm:p-8 shadow-[0_20px_50px_rgba(0,0,0,0.8)] text-left"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close Button */}

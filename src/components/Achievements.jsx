@@ -52,7 +52,7 @@ export default function Achievements() {
               </p>
 
               <div className="pt-3 border-t border-white/5 flex items-center justify-between text-xs font-mono text-slate-400">
-                <span>Team: <strong className="text-white">{item.team}</strong></span>
+                <span>Category: <strong className="text-white">Technical Innovation</strong></span>
                 <span className="text-amber-400 flex items-center gap-1">
                   <Sparkles className="w-3.5 h-3.5" />
                   Official Award
@@ -61,7 +61,7 @@ export default function Achievements() {
             </div>
           ))}
 
-          {/* Academic Standing Card */}
+          {/* Academic Specialization Card */}
           <div className="glass-card p-7 rounded-3xl border border-white/10 flex flex-col justify-between">
             <div>
               <div className="flex items-center gap-4 mb-4">
@@ -79,11 +79,11 @@ export default function Achievements() {
               </div>
 
               <h3 className="text-xl sm:text-2xl font-black font-display text-white mb-2">
-                7.6 Cumulative GPA
+                B.Tech AIML Specialization
               </h3>
 
               <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                Maintained a strong 7.6 cumulative grade point average while actively pursuing practical machine learning projects, software development, and technical hackathons.
+                Dedicated focus on artificial intelligence, neural architectures, and software engineering while actively building practical machine learning systems and competing in technical challenges.
               </p>
             </div>
 

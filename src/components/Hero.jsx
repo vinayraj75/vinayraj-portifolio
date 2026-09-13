@@ -6,6 +6,8 @@ import { GithubIcon, LinkedinIcon } from './Icons';
 import profilePhoto from '../assets/profile/profile.jpg';
 import LightRays from './LightRays';
 import { useTheme } from '../utils/ThemeContext';
+import StrokeText from './StrokeText';
+import TextType from './TextType';
 
 export default function Hero() {
   const [mouseOffset, setMouseOffset] = useState({ x: 0, y: 0 });
@@ -75,17 +77,61 @@ export default function Hero() {
           </div>
 
           {/* Main Title & Brand Identity */}
-          <h2 className={`text-xl sm:text-2xl font-mono mb-2 font-medium tracking-wide ${
+          <h2 className={`text-xl sm:text-2xl font-mono mb-3 font-medium tracking-wide ${
             isDark ? 'text-slate-300' : 'text-slate-600'
           }`}>
-            Hi, I'm <span className={isDark ? 'text-white font-bold' : 'text-slate-900 font-bold'}>{personalInfo.fullName}</span>.
+            <TextType
+              as="span"
+              text={[
+                "Hi, I'm Vinay.",
+                "Hi, I'm Chinnam Vinay."
+              ]}
+              typingSpeed={70}
+              pauseDuration={2200}
+              deletingSpeed={35}
+              showCursor={true}
+              cursorCharacter="|"
+              cursorClassName="text-[#facc15] font-bold"
+              className={isDark ? 'text-white font-bold' : 'text-slate-900 font-bold'}
+            />
           </h2>
 
-          <h1 className="text-4xl sm:text-6xl xl:text-7xl font-black font-display tracking-tight leading-[1.08] mb-6">
-            <span className={`block ${isDark ? 'text-white' : 'text-slate-900'}`}>AI / ML</span>
-            <span className="bg-gradient-to-r from-[#facc15] via-[#fb923c] to-[#ef4444] bg-clip-text text-transparent">
-              ENGINEER
-            </span>
+          <h1 className="w-full max-w-2xl mb-6">
+            <span className="sr-only">AIML Engineer</span>
+            <div className="w-full max-w-[260px] sm:max-w-[340px] md:max-w-[400px] -mb-1">
+              <StrokeText
+                text="AI / ML"
+                strokeColor={isDark ? "#facc15" : "#ea580c"}
+                fillColor={isDark ? "#ffffff" : "#09101f"}
+                strokeWidth={2.2}
+                drawDuration={1.4}
+                fillDelay={0.15}
+                stagger={0.06}
+                ease="power3.out"
+                trigger="mount"
+                fillMode="wipe"
+                fontSize={84}
+                fontWeight={900}
+                letterSpacing={-1}
+              />
+            </div>
+            <div className="w-full max-w-[330px] sm:max-w-[440px] md:max-w-[500px]">
+              <StrokeText
+                text="ENGINEER"
+                strokeColor="#ef4444"
+                fillColor="#facc15"
+                strokeWidth={2.2}
+                drawDuration={1.6}
+                fillDelay={0.25}
+                stagger={0.05}
+                ease="power3.out"
+                trigger="mount"
+                fillMode="wipe"
+                fontSize={84}
+                fontWeight={900}
+                letterSpacing={-1}
+              />
+            </div>
           </h1>
 
           {/* Supporting Statements */}
@@ -215,7 +261,7 @@ export default function Hero() {
                 {/* Cyber badge at bottom of portrait */}
                 <div className="absolute bottom-3 left-3 right-3 py-2 px-3 bg-[#06090f]/85 backdrop-blur-md rounded-xl border border-white/10 flex items-center justify-between">
                   <div>
-                    <p className="text-[11px] font-bold text-white tracking-wider font-display">CHINNAM VINAY</p>
+                    <p className="text-[11px] font-bold text-white keep-white tracking-wider font-display">CHINNAM VINAY</p>
                     <p className="text-[9px] font-mono text-[#facc15]">AIML • Ramachandra Eng College</p>
                   </div>
                   <div className="flex items-center gap-1 text-[10px] font-mono text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/20">

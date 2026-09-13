@@ -8,9 +8,9 @@ Designed with cinematic dark-mode aesthetics inspired by modern developer ecosys
 
 ## 🚀 Key Features
 
-- **Strictly Factual & Truthful Content**: Complete integration of Vinay's authentic B.Tech AIML background, CGPA 7.6, NPTEL Elite Certification (IIT Kharagpur, 62%), and Prakalp Hackathon 3rd Prize (*DuoXtitans*).
+- **Strictly Factual & Truthful Content**: Complete integration of Vinay's authentic B.Tech AIML background, NPTEL Elite Certification (IIT Kharagpur, 62%), and Prakalp Hackathon 3rd Prize.
 - **Authentic Portrait Presentation**: Uses Vinay's real photo (`src/assets/profile/profile.jpg`) integrated with an interactive cyber frame and floating technical badges.
-- **Interactive Project Architecture**: Detailed modal showcasing the problem, solution, ML pipeline, and key capabilities of projects like *Smart Crop Recommendation & Leaf Disease Detection*.
+- **Interactive Project Architecture**: Detailed modal showcasing the problem, solution, technology stack, and key capabilities of projects like *SEO Optimizer Pro*.
 - **Data-Driven Architecture**: All portfolio information (skills, projects, certifications, social links) is maintained in `src/data/portfolioData.js` for effortless updates.
 - **Micro-Interactions**: Ambient neural particle background canvas, top scroll progress bar, desktop custom cursor, and smooth hover effects.
 - **Production-Ready & Fully Responsive**: Tested across desktop (1440px/1280px), tablet (768px), and mobile (390px/360px).
@@ -47,7 +47,7 @@ Designed with cinematic dark-mode aesthetics inspired by modern developer ecosys
 │   │   ├── TechStack.jsx    # Core tech icon grid
 │   │   ├── Projects.jsx     # Featured projects showcase
 │   │   ├── ProjectModal.jsx # Architecture & flow modal
-│   │   ├── HackathonSection.jsx # DuoXtitans & Prakalp win
+│   │   ├── HackathonSection.jsx # Prakalp 3rd prize win showcase
 │   │   ├── Certifications.jsx  # NPTEL Elite (IIT Kharagpur) card
 │   │   ├── Achievements.jsx # Podium honors & awards
 │   │   ├── Education.jsx    # B.Tech AIML timeline
