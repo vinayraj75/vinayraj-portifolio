@@ -1,0 +1,197 @@
+﻿Diagnose log at 2026-09-13T07:59:38Z
+
+AppPath: C:\Program Files\Git\mingw64\bin\git-credential-manager.exe
+InstallDir: C:\Program Files\Git\mingw64\bin\
+Version: 2.9.0+194ba290ce533465310d50f811684ab180536ae7
+
+------------
+Diagnostic: Environment
+Skipped: False
+Success: True
+Exception: None
+Log:
+OSType: Windows
+OSVersion: 10.0 (build 26200)
+Reading environment variables... OK
+ Variables:
+OneDriveConsumer=C:\Users\Anshu\OneDrive
+ProgramFiles(x86)=C:\Program Files (x86)
+MSYSTEM=MINGW64
+ProgramW6432=C:\Program Files
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 183 Stepping 1, GenuineIntel
+TMP=C:\Users\Anshu\AppData\Local\Temp
+ALLUSERSPROFILE=C:\ProgramData
+PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.CPL
+PUBLIC=C:\Users\Public
+VSCODE_CWD=C:\Users\Anshu\AppData\Local\Programs\Antigravity IDE
+EFC_40552_2283032206=1
+USERPROFILE=C:\Users\Anshu
+ANTIGRAVITY_SOURCE_METADATA={"tool":{"conversationId":"3ff54b7d-42fa-491e-aa2b-ca58fdb7209e","stepIndex":650,"toolCall":{"id":"call_2911864","name":"run_command","argumentsJson":"{\"CommandLine\":\"git credential-manager diagnose\",\"Cwd\":\"c:\\\\Users\\\\Anshu\\\\OneDrive\\\\Desktop\\\\VINNUPORTI\",\"IsDaemon\":false,\"WaitMsBeforeAsync\":5000,\"toolAction\":\"Diagnose Git Credential Manager\",\"toolSummary\":\"git credential-manager diagnose\"}","thinkingSignature":"EpEFCo4FARFNMg/4GXWahwU1aWAFYtR0cfsdbzhlwPwQ4CBN63sMxONb36DeRWvS7tPjjfYOZsrQZqXV1vcVsdBjq2bC3Mt2oLjv7swCD2H9gfs4yyliyq/le+lzwbUfthyCtkv1kRVcrR1UxqD7NnWf8zmV8Lm+9MBaOXeNuraLLP6FiNZrSbZXfsrK1BqMmu0bXlMIaGFiqR63qcjPxxOxyRMGZY6n7mSMnzcny8eE96PjmMK7FG7rhfYRjz4fc3KTtYNuiDiQ1L9R3Pwoq8TsnSjNoEyH2sb14NN/Z7D+ZOvYaw9CsidGsbkPbYrVdi8BY+w0ph7PfdoIR+q8LTqFdKRcFP1gQbvdO1I7Qw538teuJeSyOp0in9ITP6nm/hor5rxx4ZwkmpUUMNy+0w8KFOacjnC+B3aJGM8c4kZ8FVAWTuTgXpF/U+yKaAaRGzHxzTOK49hP/uJKoh5NHJVXr5Phxqn1CzWLal9fmwaR0z7NIICGKXPyV0KaMmiYb4Fa1zD7JSZx41pyyT7W+VudL43PRBePXzMPlYjzIoeKIZBrqxBPqMDb38Mzqv9uLjHJgRUhOIslz9Q1dpb4lk7/yN27CdtSyj4b6jrSBB8RLL+odmzDrsIzgN4adwsZkhj9fEje+MJ4Lki1ESc3xmkBCgfJtKmi4xDC5ZKH3OYQXeE6hcBsDMSDtsN41HPPMaQ9yEwuazMgQMgn6MoyoJQAVPI9KEaODNxH9/TfCheBu+NyjmRCrilRlKCg4Q3DUf9wOI/V2us8y2TowZg9/ZAgv4ddt81hUOJbC9vFcMt0U/Q8drvuTw/MAbjAsyf4cwIxn1Wge28Fhverv5c7WI0Aa+Ht0XOsfXWTsqbGBm1LHYGR","originalName":"run_command"}}}
+PROCESSOR_REVISION=b701
+EFC_40552_2946480783=1
+TEMP=C:\Users\Anshu\AppData\Local\Temp
+FPS_BROWSER_APP_PROFILE_STRING=Internet Explorer
+FPS_BROWSER_USER_PROFILE_STRING=Default
+LOGONSERVER=\\SALAAR
+TERM=xterm-256color
+USERNAME=Anshu
+SystemRoot=C:\Windows
+CHROME_CRASHPAD_PIPE_NAME=\\.\pipe\crashpad_25788_EZYXMNQQEYKTQXEZ
+GIT_EXEC_PATH=C:/Program Files/Git/mingw64/libexec/git-core
+PLINK_PROTOCOL=ssh
+PATH=C:/Program Files/Git/mingw64/libexec/git-core;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\Anshu\bin;C:/Users/Anshu/.gemini/antigravity-ide/bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Users\Anshu\AppData\Local\Programs\Python\Python312\Scripts\;C:\Users\Anshu\AppData\Local\Programs\Python\Python312\;C:\Users\Anshu\AppData\Local\Programs\Python\Launcher\;C:\Users\Anshu\.local\bin;C:\Users\Anshu\AppData\Local\Microsoft\WindowsApps;C:\Users\Anshu\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Anshu\AppData\Roaming\npm;C:\Users\Anshu\AppData\Local\Programs\Antigravity IDE\bin;C:\Users\Anshu\AppData\Local\Programs\cursor\resources\app\bin
+OneDrive=C:\Users\Anshu\OneDrive
+PROCESSOR_ARCHITECTURE=AMD64
+CommonProgramFiles=C:\Program Files\Common Files
+ANTIGRAVITY_TRAJECTORY_ID=d04929b8-b404-4d24-b0a0-18d45740fa52
+EFC_40552_4126798990=1
+ANTIGRAVITY_LS_ADDRESS=localhost:52741
+ProgramData=C:\ProgramData
+LC_CTYPE=C.UTF-8
+HOMEPATH=\Users\Anshu
+EFC_40552_2775293581=1
+ANTIGRAVITY_SAFECLIS_SOURCE=C:/Users/Anshu/.gemini/antigravity-ide/bin/safeclis/src
+ANTIGRAVITY_AGENT=1
+CommonProgramW6432=C:\Program Files\Common Files
+SESSIONNAME=Console
+VSCODE_IPC_HOOK=\\.\pipe\e8044455-1.107.0-main-sock
+DriverData=C:\Windows\System32\Drivers\DriverData
+HOMEDRIVE=C:
+VSCODE_PID=25788
+windir=C:\Windows
+GIT_TRACE2_PARENT_SID=e2802521-6595-4321-8457-7b65d2ef7938
+SystemDrive=C:
+NUMBER_OF_PROCESSORS=16
+OS=Windows_NT
+EFC_40552_1592913036=1
+ZES_ENABLE_SYSMAN=1
+ProgramFiles=C:\Program Files
+ComSpec=C:\Windows\system32\cmd.exe
+USERDOMAIN_ROAMINGPROFILE=SALAAR
+HOME=C:\Users\Anshu
+PSModulePath=C:\Users\Anshu\OneDrive\Documents\WindowsPowerShell\Modules;C:\Program Files\WindowsPowerShell\Modules;C:\Windows\system32\WindowsPowerShell\v1.0\Modules
+ANTIGRAVITY_CSRF_TOKEN=0c758e14-f908-485c-a0db-e14d5b10005b
+ANTIGRAVITY_CONVERSATION_ID=3ff54b7d-42fa-491e-aa2b-ca58fdb7209e
+TMPDIR=C:\Users\Anshu\AppData\Local\Temp
+APPDATA=C:\Users\Anshu\AppData\Roaming
+USERDOMAIN=SALAAR
+COMPUTERNAME=SALAAR
+ANTIGRAVITY_EDITOR_APP_ROOT=c:\Users\Anshu\AppData\Local\Programs\Antigravity IDE\resources\app
+LOCALAPPDATA=C:\Users\Anshu\AppData\Local
+VSCODE_NLS_CONFIG={"userLocale":"en-us","osLocale":"en-in","resolvedLanguage":"en","defaultMessagesFile":"C:\\Users\\Anshu\\AppData\\Local\\Programs\\Antigravity IDE\\resources\\app\\out\\nls.messages.json","locale":"en-us","availableLanguages":{}}
+ANTIGRAVITY_AGENTAPI_EXE=c:\Users\Anshu\AppData\Local\Programs\Antigravity IDE\resources\app\extensions\antigravity\bin\language_server_windows_x64.exe
+CommonProgramFiles(x86)=C:\Program Files (x86)\Common Files
+COLORTERM=truecolor
+VSCODE_CODE_CACHE_PATH=C:\Users\Anshu\AppData\Roaming\Antigravity IDE\CachedData\ecfbad74d93962fc8ca485d93ab9b4f3d4cb6cf8
+PROCESSOR_LEVEL=6
+ANTIGRAVITY_LS_VERSION=ide-2.4.5
+EFC_40552_3789132940=1
+
+
+------------
+Diagnostic: File system
+Skipped: False
+Success: True
+Exception: None
+Log:
+Temporary directory is 'C:\Users\Anshu\AppData\Local\Temp\'...
+Checking basic file I/O...
+Writing to temporary file 'C:\Users\Anshu\AppData\Local\Temp\53c8481c8af5bcd79b1dfc28'... OK
+Reading from temporary file 'C:\Users\Anshu\AppData\Local\Temp\53c8481c8af5bcd79b1dfc28'... OK
+Deleting temporary file 'C:\Users\Anshu\AppData\Local\Temp\53c8481c8af5bcd79b1dfc28'... OK
+Testing IFileSystem instance...
+UserHomePath: C:\Users\Anshu
+UserDataDirectoryPath: C:\Users\Anshu\.gcm
+GetCurrentDirectory(): C:\Users\Anshu\OneDrive\Desktop\VINNUPORTI
+
+------------
+Diagnostic: Networking
+Skipped: False
+Success: True
+Exception: None
+Log:
+Checking networking and HTTP stack...
+Creating HTTP client... OK
+IsNetworkAvailable: True
+Sending HEAD request to http://example.com... OK
+Sending HEAD request to https://example.com... OK
+Acquiring free TCP port... OK
+Testing local HTTP loopback connections...
+Creating new HTTP listener for http://localhost:60535/... OK
+Waiting for loopback connection... OK
+Writing response... OK
+Waiting for response data... OK
+Loopback connection data OK
+
+------------
+Diagnostic: Git
+Skipped: False
+Success: True
+Exception: None
+Log:
+Getting Git version... OK
+Git version is '2.55.0.windows.3'
+Locating current repository...Git repository at 'C:/Users/Anshu/OneDrive/Desktop/VINNUPORTI/.git'
+ OK
+Listing all Git configuration... OK
+Git configuration:
+file:C:/Program Files/Git/etc/gitconfig	diff.astextplain.textconv=astextplain
+file:C:/Program Files/Git/etc/gitconfig	filter.lfs.clean=git-lfs clean -- %f
+file:C:/Program Files/Git/etc/gitconfig	filter.lfs.smudge=git-lfs smudge -- %f
+file:C:/Program Files/Git/etc/gitconfig	filter.lfs.process=git-lfs filter-process
+file:C:/Program Files/Git/etc/gitconfig	filter.lfs.required=true
+file:C:/Program Files/Git/etc/gitconfig	http.sslbackend=schannel
+file:C:/Program Files/Git/etc/gitconfig	core.autocrlf=true
+file:C:/Program Files/Git/etc/gitconfig	core.fscache=true
+file:C:/Program Files/Git/etc/gitconfig	core.symlinks=false
+file:C:/Program Files/Git/etc/gitconfig	pull.rebase=false
+file:C:/Program Files/Git/etc/gitconfig	credential.helper=manager
+file:C:/Program Files/Git/etc/gitconfig	credential.https://dev.azure.com.usehttppath=true
+file:C:/Program Files/Git/etc/gitconfig	init.defaultbranch=master
+file:.git/config	core.repositoryformatversion=0
+file:.git/config	core.filemode=false
+file:.git/config	core.bare=false
+file:.git/config	core.logallrefupdates=true
+file:.git/config	core.symlinks=false
+file:.git/config	core.ignorecase=true
+file:.git/config	user.name=Chinnam Vinay
+file:.git/config	user.email=vinayraj75@users.noreply.github.com
+file:.git/config	remote.origin.url=https://github.com/vinayraj75/vinayraj-portfolio.git
+file:.git/config	remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+file:.git/config	credential.https://github.com.username=vinayraj75
+
+
+------------
+Diagnostic: Credential storage
+Skipped: False
+Success: True
+Exception: None
+Log:
+ICredentialStore instance is of type: CredentialStore
+Writing test credential... OK
+Reading test credential... OK
+Deleting test credential... OK
+
+------------
+Diagnostic: Microsoft authentication (AAD/MSA)
+Skipped: False
+Success: True
+Exception: None
+Log:
+Broker is not enabled.
+Gathering MSAL token cache data... OK
+CacheDirectory: C:\Users\Anshu\AppData\Local\.IdentityService
+CacheFileName: msal.cache
+CacheFilePath: C:\Users\Anshu\AppData\Local\.IdentityService\msal.cache
+Creating cache helper... OK
+Verifying MSAL token cache persistence... OK
+
+------------
+Diagnostic: GitHub API
+Skipped: False
+Success: True
+Exception: None
+Log:
+Using 'https://github.com/' as API target.
+Querying '/meta' endpoint... OK
+
