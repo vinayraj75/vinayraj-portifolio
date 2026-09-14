@@ -11,11 +11,31 @@
   --sm-border: rgba(255, 255, 255, 0.1);
 }
 
-:root:not(.dark) .staggered-menu-wrapper {
+html.light .staggered-menu-wrapper {
   --sm-panel-bg: #ffffff;
   --sm-text: #09101f;
   --sm-social-text: #475569;
   --sm-border: rgba(0, 0, 0, 0.08);
+}
+
+/* Also fix toggle button appearance in light mode */
+html.light .sm-toggle {
+  background: rgba(241, 245, 249, 0.85);
+  border-color: rgba(15, 23, 42, 0.15);
+  color: #0f172a;
+}
+
+html.light .sm-toggle:hover {
+  border-color: rgba(2, 132, 199, 0.4);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+html.light .sm-panel-title {
+  color: #0f172a;
+}
+
+html.light .staggered-menu-panel {
+  box-shadow: -15px 0 50px rgba(0, 0, 0, 0.12);
 }
 
 .staggered-menu-wrapper.fixed-wrapper {

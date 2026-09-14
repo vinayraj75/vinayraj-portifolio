@@ -4,6 +4,7 @@ import Hero from './components/Hero';
 import About from './components/About';
 import NexLayerSection from './components/NexLayerSection';
 import Skills from './components/Skills';
+import TechMarquee from './components/TechMarquee';
 import TechStack from './components/TechStack';
 import Projects from './components/Projects';
 import HackathonSection from './components/HackathonSection';
@@ -45,6 +46,7 @@ export default function App() {
           <About />
           <NexLayerSection />
           <Skills />
+          <TechMarquee />
           <TechStack />
           <Projects />
           <HackathonSection />

@@ -124,46 +124,46 @@ html.light {
   color: #090d16;
 }
 
-/* Headings in Light Mode */
-html.light h1,
-html.light h2,
-html.light h3,
-html.light h4,
-html.light h5,
-html.light h6 {
+/* Headings in Light Mode — exclude hero (always dark) */
+html.light h1:not(#home *),
+html.light h2:not(#home *),
+html.light h3:not(#home *),
+html.light h4:not(#home *),
+html.light h5:not(#home *),
+html.light h6:not(#home *) {
   color: #090d16;
 }
 
-/* General Body Text */
-html.light p,
-html.light span:not([class*="text-"]):not([class*="bg-"]),
-html.light li:not([class*="text-"]),
-html.light label {
+/* General Body Text — exclude hero */
+html.light p:not(#home *),
+html.light span:not([class*="text-"]):not([class*="bg-"]):not(#home *),
+html.light li:not([class*="text-"]):not(#home *),
+html.light label:not(#home *) {
   color: #1e293b;
 }
 
-/* Transform light/white text classes into dark black in light mode */
-html.light .text-white:not(.keep-white):not(.bg-clip-text) {
+/* Transform light/white text classes into dark black — exclude hero */
+html.light .text-white:not(.keep-white):not(.bg-clip-text):not(#home *) {
   color: #090d16 !important;
 }
 
-html.light .text-slate-100:not(.keep-white):not(.bg-clip-text) {
+html.light .text-slate-100:not(.keep-white):not(.bg-clip-text):not(#home *) {
   color: #090d16 !important;
 }
 
-html.light .text-slate-200:not(.keep-white):not(.bg-clip-text) {
+html.light .text-slate-200:not(.keep-white):not(.bg-clip-text):not(#home *) {
   color: #1e293b !important;
 }
 
-html.light .text-slate-300:not(.keep-white):not(.bg-clip-text) {
+html.light .text-slate-300:not(.keep-white):not(.bg-clip-text):not(#home *) {
   color: #334155 !important;
 }
 
-html.light .text-slate-400:not(.keep-white):not(.bg-clip-text) {
+html.light .text-slate-400:not(.keep-white):not(.bg-clip-text):not(#home *) {
   color: #475569 !important;
 }
 
-html.light .text-slate-500:not(.keep-white):not(.bg-clip-text) {
+html.light .text-slate-500:not(.keep-white):not(.bg-clip-text):not(#home *) {
   color: #64748b !important;
 }
 
@@ -314,3 +314,316 @@ html.light .text-gradient-fire {
     scroll-behavior: auto !important;
   }
 }
+
+/* =========================================================
+   SECTION LABEL BADGES
+   The pill badges like "01. Foundation", "02. Technical..."
+   use bg-slate-900/70 which is dark. Override for light.
+   ========================================================= */
+.section-label-badge {
+  background: rgba(15, 23, 42, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+html.light .section-label-badge {
+  background: rgba(2, 132, 199, 0.08) !important;
+  border: 1px solid rgba(2, 132, 199, 0.2) !important;
+}
+
+/* Tailwind utility override for the badge pattern used across all sections */
+html.light .bg-slate-900\/70 {
+  background-color: rgba(241, 245, 249, 0.9) !important;
+}
+
+/* =========================================================
+   HERO SECTION
+   Keep the hero always dark — it's a cinematic showcase
+   and must preserve the DEVELOPER stroke text + photo look.
+   ========================================================= */
+/* (no overrides — hero intentionally stays dark in all themes) */
+
+/* =========================================================
+   ABOUT SECTION
+   Inner dark info boxes: bg-[#06090f]/70
+   Currently building items: bg-[#06090f]/60
+   ========================================================= */
+html.light section#about [class*="bg-\\[\\#06090f\\]"],
+html.light section#about [class*="bg-\\[#06090f\\]"] {
+  background-color: rgba(241, 245, 249, 0.8) !important;
+  border-color: rgba(15, 23, 42, 0.08) !important;
+}
+
+/* Broader catch for the dark boxes in About */
+html.light #about .glass-card [style*="#06090f"],
+html.light #about [class*="rounded-xl"][class*="border"] {
+  color: #1e293b;
+}
+
+html.light #about p.text-white,
+html.light #about .text-white {
+  color: #0f172a !important;
+}
+
+/* =========================================================
+   PROJECTS SECTION
+   Problem/Solution box: bg-[#060a14]/80
+   Status badge: bg-white/5
+   ========================================================= */
+html.light section#projects [class*="bg-\\[\\#060a14\\]"],
+html.light section#projects [class*="bg-\\[#060a14\\]"] {
+  background-color: rgba(241, 245, 249, 0.85) !important;
+  border-color: rgba(15, 23, 42, 0.08) !important;
+}
+
+/* Status badge */
+html.light section#projects [class*="bg-white\/5"] {
+  background-color: rgba(15, 23, 42, 0.05) !important;
+  border-color: rgba(15, 23, 42, 0.1) !important;
+  color: #475569 !important;
+}
+
+/* Tech pills */
+html.light section#projects [class*="bg-white\/5"][class*="rounded-md"] {
+  background-color: rgba(15, 23, 42, 0.05) !important;
+  border-color: rgba(15, 23, 42, 0.1) !important;
+  color: #334155 !important;
+}
+
+/* GitHub action button */
+html.light section#projects [class*="bg-white\/5"][href] {
+  background-color: rgba(15, 23, 42, 0.05) !important;
+  color: #334155 !important;
+  border-color: rgba(15, 23, 42, 0.1) !important;
+}
+html.light section#projects [class*="bg-white\/5"][href]:hover {
+  background-color: rgba(15, 23, 42, 0.1) !important;
+  color: #0f172a !important;
+}
+
+/* =========================================================
+   FOCUS / CURRENT TRAJECTORY SECTION
+   bg-[#070c18]/40 section background
+   ========================================================= */
+html.light section.py-20[class*="bg-\\[\\#070c18\\]"],
+html.light section[class*="bg-\\[\\#070c18\\]"] {
+  background-color: rgba(241, 245, 249, 0.6) !important;
+}
+
+/* =========================================================
+   TECH STACK SECTION (the static grid)
+   bg-[#070c18]/50 section background
+   ========================================================= */
+html.light section.py-16[class*="bg-\\[\\#070c18\\]"] {
+  background-color: rgba(241, 245, 249, 0.5) !important;
+}
+
+html.light section.py-16 .glass-card [class*="bg-white\/5"],
+html.light section.py-16 .glass-card [class*="rounded-lg"][class*="bg-white\/5"] {
+  background-color: rgba(15, 23, 42, 0.05) !important;
+}
+
+/* =========================================================
+   TECH MARQUEE SECTION (LogoLoop)
+   ========================================================= */
+.tech-marquee-section {
+  background: linear-gradient(180deg, #07090f 0%, #0b1120 50%, #07090f 100%);
+  border-color: rgba(255, 255, 255, 0.05);
+}
+
+html.light .tech-marquee-section {
+  background: linear-gradient(180deg, #f5f8ff 0%, #eef2fa 50%, #f5f8ff 100%) !important;
+  border-color: rgba(15, 23, 42, 0.08) !important;
+}
+
+/* =========================================================
+   EDUCATION SECTION
+   Timeline pin: bg-[#06090f]
+   ========================================================= */
+html.light [class*="bg-\\[\\#06090f\\]"][class*="rounded-full"][class*="border-cyan"] {
+  background-color: #ffffff !important;
+}
+
+/* =========================================================
+   FOOTER
+   bg-[#05080e] hardcoded
+   ========================================================= */
+html.light footer[class*="bg-\\[\\#05080e\\]"] {
+  background-color: #f8fafc !important;
+}
+
+html.light footer [class*="bg-white\/5"] {
+  background-color: rgba(15, 23, 42, 0.05) !important;
+  border-color: rgba(15, 23, 42, 0.08) !important;
+}
+
+html.light footer [class*="text-slate-600"] {
+  color: #94a3b8 !important;
+}
+
+/* =========================================================
+   COMMON DARK INNER BOXES
+   Catch-all for remaining hardcoded dark bg boxes
+   that exist inside glass-cards and sections.
+   ========================================================= */
+
+/* bg-white/5 backgrounds used as inner containers */
+html.light [class*="bg-white\/5"]:not(button):not(a):not(.logoloop):not(.logoloop *) {
+  background-color: rgba(15, 23, 42, 0.04) !important;
+}
+
+html.light [class*="bg-white\/10"]:not(button):not(a):not(.logoloop):not(.logoloop *) {
+  background-color: rgba(15, 23, 42, 0.07) !important;
+}
+
+/* =========================================================
+   GITHUB ICON - too light in light mode
+   ========================================================= */
+html.light .text-slate-300 svg,
+html.light [class*="text-slate-300"] svg {
+  color: #475569;
+}
+
+/* =========================================================
+   SECTION HEADINGS — ensure text-white headings are dark
+   Exclude #home (hero) since it stays dark intentionally.
+   ========================================================= */
+html.light h1.text-white:not(#home *),
+html.light h2.text-white:not(#home *),
+html.light h3.text-white:not(#home *),
+html.light h4.text-white:not(#home *) {
+  color: #0f172a !important;
+}
+
+/* font-display headings outside hero */
+html.light .font-display.text-white:not(#home *),
+html.light .font-display[class*="text-white"]:not(#home *) {
+  color: #0f172a !important;
+}
+
+/* Stat / credential values that use text-slate-200 — exclude hero */
+html.light .text-slate-200:not(#home *) {
+  color: #1e293b !important;
+}
+
+/* =========================================================
+   CERTIFICATIONS / HACKATHONS / ACHIEVEMENTS / GITHUB
+   Cards using dark inner boxes — broad safe catch
+   ========================================================= */
+html.light .glass-card [class*="rounded-xl"][class*="bg-white\/5"],
+html.light .glass-card [class*="rounded-xl"][class*="bg-white\/10"],
+html.light .glass-card [class*="rounded-2xl"][class*="bg-white\/5"] {
+  background-color: rgba(15, 23, 42, 0.04) !important;
+  border-color: rgba(15, 23, 42, 0.08) !important;
+}
+
+/* Preserve gradient text from being overridden */
+html.light .bg-clip-text,
+html.light [class*="bg-clip-text"],
+html.light .text-transparent {
+  color: transparent !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+/* =========================================================
+   NEXLAYER SECTION (#experience)
+   Uses dark slate-900/slate-950 cards — must be fixed for light.
+   ========================================================= */
+
+/* Main company card: bg-gradient from-slate-900/90 … to-slate-950/90 */
+html.light section#experience > div > div:nth-child(2) {
+  background: rgba(255, 255, 255, 0.97) !important;
+  border-color: rgba(2, 132, 199, 0.2) !important;
+  box-shadow: 0 16px 40px -15px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Executive overview description box: bg-slate-950/50 */
+html.light section#experience [class*="bg-slate-950"] {
+  background: rgba(241, 245, 249, 0.85) !important;
+  border-color: rgba(15, 23, 42, 0.08) !important;
+}
+
+/* NexLayer logo box: bg-slate-950/80 */
+html.light section#experience [class*="bg-slate-950\/80"] {
+  background: rgba(255, 255, 255, 0.95) !important;
+}
+
+/* Timeline element: bg-slate-950/60 */
+html.light section#experience [class*="bg-slate-950\/60"] {
+  background: rgba(241, 245, 249, 0.9) !important;
+  border-color: rgba(15, 23, 42, 0.1) !important;
+}
+
+/* Active Leadership badge: bg-white/5 inside timeline */
+html.light section#experience [class*="bg-white\/5"] {
+  background: rgba(15, 23, 42, 0.06) !important;
+  color: #475569 !important;
+}
+
+/* Responsibility cards: bg-slate-900/60 */
+html.light section#experience [class*="bg-slate-900\/60"],
+html.light section#experience [class*="bg-slate-900\/80"] {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border-color: rgba(15, 23, 42, 0.08) !important;
+  box-shadow: 0 4px 16px -4px rgba(0, 0, 0, 0.06) !important;
+}
+
+/* Leadership + Tech highlight cards: from-slate-900/80 to-slate-950 */
+html.light section#experience [class*="from-slate-900"] {
+  background: rgba(255, 255, 255, 0.97) !important;
+  border-color: rgba(15, 23, 42, 0.1) !important;
+}
+
+/* Technology badge inside NexLayer: bg-slate-800 */
+html.light section#experience [class*="bg-slate-800"] {
+  background: rgba(241, 245, 249, 0.9) !important;
+  border-color: rgba(15, 23, 42, 0.1) !important;
+  color: #334155 !important;
+}
+
+/* All text inside NexLayer section */
+html.light section#experience h2,
+html.light section#experience h3,
+html.light section#experience h4 {
+  color: #0f172a !important;
+}
+
+html.light section#experience .text-white {
+  color: #0f172a !important;
+}
+
+html.light section#experience .text-slate-200,
+html.light section#experience .text-slate-300 {
+  color: #334155 !important;
+}
+
+html.light section#experience .text-slate-400 {
+  color: #64748b !important;
+}
+
+html.light section#experience .text-slate-500 {
+  color: #94a3b8 !important;
+}
+
+/* Preserve cyan accent colors */
+html.light section#experience .text-cyan-400,
+html.light section#experience .text-cyan-300 {
+  color: #0284c7 !important;
+}
+
+/* Dividers inside NexLayer */
+html.light section#experience [class*="border-white\/5"],
+html.light section#experience [class*="border-white\/10"] {
+  border-color: rgba(15, 23, 42, 0.08) !important;
+}
+
+/* Ambient glow blobs — tone down in light mode */
+html.light section#experience [class*="bg-gradient-to-br"][class*="from-cyan-900"],
+html.light section#experience [class*="bg-blue-600\/5"] {
+  opacity: 0.3 !important;
+}
+
+/* Subtle dot-grid texture overlay — hide in light mode */
+html.light section#experience [style*="radial-gradient"] {
+  opacity: 0 !important;
+}
+
