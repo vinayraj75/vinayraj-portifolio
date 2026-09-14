@@ -29,11 +29,11 @@ export default function Skills() {
   const getProficiencyStyle = (prof) => {
     switch (prof) {
       case 'Working Knowledge':
-        return 'text-[#facc15] bg-[#facc15]/10 border-[#facc15]/30';
+        return 'text-cyan-400 bg-cyan-500/10 border-cyan-500/30';
       case 'Currently Learning':
-        return 'text-[#ef4444] bg-[#ef4444]/10 border-[#ef4444]/30';
+        return 'text-blue-400 bg-blue-500/10 border-blue-500/30';
       case 'Familiar':
-        return 'text-amber-400 bg-amber-400/10 border-amber-400/30';
+        return 'text-sky-300 bg-sky-500/10 border-sky-500/25';
       default:
         return 'text-slate-300 bg-white/5 border-white/10';
     }
@@ -43,15 +43,15 @@ export default function Skills() {
     <section id="skills" className="py-24 px-4 sm:px-6 lg:px-8 relative">
       <div className="max-w-7xl mx-auto">
         
-        {/* Section Header */}
+        {/* Section Header with Frosted Glass Back */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#facc15]/10 border border-[#facc15]/20 text-[#facc15] font-mono text-xs uppercase tracking-widest mb-3">
-              <Brain className="w-3.5 h-3.5" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/70 backdrop-blur-xl border border-white/10 text-cyan-400 font-mono text-xs uppercase tracking-widest mb-3 shadow-sm">
+              <Brain className="w-3.5 h-3.5 text-cyan-400" />
               <span>02. Technical Competencies</span>
             </div>
             <h2 className="text-3xl sm:text-5xl font-black font-display tracking-tight">
-              TECHNICAL <span className="bg-gradient-to-r from-[#facc15] via-[#fb923c] to-[#ef4444] bg-clip-text text-transparent">SKILLS</span>
+              TECHNICAL <span className="bg-gradient-to-r from-cyan-400 via-sky-400 to-blue-500 bg-clip-text text-transparent">SKILLS</span>
             </h2>
           </div>
           <p className="text-xs font-mono text-slate-400 mt-3 md:mt-0 max-w-sm">
@@ -70,8 +70,8 @@ export default function Skills() {
                 onClick={() => setActiveTab(cat.key)}
                 className={`inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-medium tracking-wide transition-all ${
                   isActive
-                    ? 'bg-gradient-to-r from-[#facc15] to-[#ef4444] text-slate-950 font-bold shadow-[0_0_15px_rgba(250,204,21,0.4)]'
-                    : 'bg-[#0b1220] dark:bg-[#0b1220] bg-white/60 text-slate-300 dark:text-slate-300 hover:text-white border border-white/5 dark:border-white/5 border-slate-200'
+                    ? 'bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold shadow-[0_0_15px_rgba(6,182,212,0.35)]'
+                    : 'bg-slate-900/60 backdrop-blur-md text-slate-300 hover:text-white border border-white/10'
                 }`}
               >
                 <Icon className="w-3.5 h-3.5" />
@@ -86,12 +86,12 @@ export default function Skills() {
           {displayedSkills.map((skill, idx) => (
             <div
               key={`${skill.name}-${idx}`}
-              className="glass-card p-6 rounded-2xl border border-white/5 hover:border-[#facc15]/40 transition-all flex flex-col justify-between group"
+              className="glass-card p-6 rounded-2xl border border-white/5 hover:border-cyan-500/40 transition-all flex flex-col justify-between group"
             >
               <div>
                 <div className="flex items-start justify-between gap-3 mb-3">
                   <div>
-                    <h3 className="text-lg font-bold font-display group-hover:text-[#facc15] transition-colors">
+                    <h3 className="text-lg font-bold font-display group-hover:text-cyan-300 transition-colors">
                       {skill.name}
                     </h3>
                     <span className="text-[11px] font-mono text-slate-400">
@@ -111,7 +111,7 @@ export default function Skills() {
 
               <div className="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-[11px] font-mono text-slate-500">
                 <span>{skill.group}</span>
-                <CheckCircle className="w-3.5 h-3.5 text-slate-600 group-hover:text-[#ef4444] transition-colors" />
+                <CheckCircle className="w-3.5 h-3.5 text-slate-600 group-hover:text-cyan-400 transition-colors" />
               </div>
             </div>
           ))}
@@ -120,7 +120,7 @@ export default function Skills() {
         {/* Core Strengths from Resume */}
         <div className="mt-10 p-6 rounded-2xl glass-card border border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div>
-            <span className="text-xs font-mono uppercase tracking-widest text-[#facc15] font-bold block mb-1">
+            <span className="text-xs font-mono uppercase tracking-widest text-cyan-400 font-bold block mb-1">
               ENGINEERING CORE STRENGTHS
             </span>
             <p className="text-xs text-slate-400">
@@ -133,7 +133,7 @@ export default function Skills() {
                 key={idx}
                 className="px-3.5 py-1.5 rounded-xl text-xs font-mono font-medium text-slate-200 bg-white/5 border border-white/10 flex items-center gap-1.5"
               >
-                <ShieldCheck className="w-3.5 h-3.5 text-[#facc15]" />
+                <ShieldCheck className="w-3.5 h-3.5 text-cyan-400" />
                 <span>{str}</span>
               </span>
             ))}

@@ -276,3 +276,66 @@ export const focusAreas = [
     icon: "Sparkles",
   },
 ];
+
+export const experience = [
+  {
+    company: "NexLayer Private Limited",
+    brandName: "NexLayer",
+    role: "Director & Co-Founder — Operations & Administration",
+    designation: "Director & Co-Founder",
+    department: "Operations & Administration",
+    duration: "",
+    website: "https://www.nexlayerweb.in/",
+    logo: "https://www.nexlayerweb.in/logo.png",
+    description: "I contribute to NexLayer Private Limited as Director and Co-Founder, with a focus on operations, administration, strategic coordination, project execution, organizational management and technology initiatives.",
+    responsibilities: [
+      "Operations & Administration",
+      "Strategic Planning & Coordination",
+      "Team Coordination",
+      "Project Execution",
+      "Business Operations",
+      "Technology Initiative Management"
+    ],
+    responsibilityDetails: [
+      {
+        title: "Operations & Administration",
+        desc: "Overseeing day-to-day organizational operations, structural administration, and administrative standards.",
+        icon: "ShieldCheck"
+      },
+      {
+        title: "Strategic Planning & Coordination",
+        desc: "Aligning leadership initiatives with structured execution roadmaps and cross-functional synchronization.",
+        icon: "Compass"
+      },
+      {
+        title: "Team Coordination",
+        desc: "Facilitating communication, milestone tracking, and cross-team collaboration across workflows.",
+        icon: "Users"
+      },
+      {
+        title: "Project Execution",
+        desc: "Driving structured delivery cycles and ensuring adherence to operational quality and timelines.",
+        icon: "CheckSquare"
+      },
+      {
+        title: "Business Operations",
+        desc: "Managing core operational workflows to maintain organizational stability, consistency, and continuity.",
+        icon: "Layers"
+      },
+      {
+        title: "Technology Initiative Management",
+        desc: "Coordinating technology-driven programs and aligning technical efforts with operational objectives.",
+        icon: "Cpu"
+      }
+    ],
+    leadershipHighlight: {
+      badge: "CO-FOUNDER",
+      text: "Contributing to the growth and execution of NexLayer through operations, coordination, administration and technology-focused initiatives."
+    },
+    techConnection: {
+      badge: "TECHNOLOGY + OPERATIONS",
+      text: "Combining technology awareness with operational and administrative coordination to support practical project execution and organizational growth."
+    }
+  }
+];
+

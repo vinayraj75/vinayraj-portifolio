@@ -4,7 +4,7 @@
   height: 100%;
   z-index: 50;
   pointer-events: none;
-  --sm-accent: #facc15;
+  --sm-accent: #06b6d4;
   --sm-panel-bg: #09101f;
   --sm-text: #ffffff;
   --sm-social-text: #94a3b8;
@@ -84,12 +84,12 @@
 }
 
 .sm-toggle:hover {
-  border-color: rgba(250, 204, 21, 0.4);
-  box-shadow: 0 0 15px rgba(250, 204, 21, 0.2);
+  border-color: rgba(6, 182, 212, 0.4);
+  box-shadow: 0 0 15px rgba(6, 182, 212, 0.2);
 }
 
 .sm-toggle:focus-visible {
-  outline: 2px solid #facc15;
+  outline: 2px solid #06b6d4;
   outline-offset: 4px;
   border-radius: 9999px;
 }
@@ -230,7 +230,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: var(--sm-accent, #facc15);
+  color: var(--sm-accent, #06b6d4);
 }
 
 .sm-socials-list {
@@ -257,7 +257,7 @@
 }
 
 .sm-socials-link:focus-visible {
-  outline: 2px solid var(--sm-accent, #facc15);
+  outline: 2px solid var(--sm-accent, #06b6d4);
   outline-offset: 3px;
 }
 
@@ -285,7 +285,7 @@
 }
 
 .sm-socials-link:hover {
-  color: var(--sm-accent, #facc15);
+  color: var(--sm-accent, #06b6d4);
   transform: translateY(-1px);
 }
 
@@ -350,7 +350,7 @@
 }
 
 .sm-panel-item:hover {
-  color: var(--sm-accent, #facc15);
+  color: var(--sm-accent, #06b6d4);
   transform: translateX(4px);
 }
 
@@ -367,7 +367,7 @@
   font-size: 14px;
   font-family: 'JetBrains Mono', monospace;
   font-weight: 500;
-  color: var(--sm-accent, #facc15);
+  color: var(--sm-accent, #06b6d4);
   letter-spacing: 0;
   pointer-events: none;
   user-select: none;

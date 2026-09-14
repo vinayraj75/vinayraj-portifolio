@@ -62,8 +62,8 @@ export default function CustomCursor() {
         <div
           className={`rounded-full border transition-all duration-200 ${
             isHovered
-              ? 'w-12 h-12 border-[#ef4444] bg-[#facc15]/10 shadow-[0_0_15px_rgba(239,68,68,0.5)]'
-              : 'w-7 h-7 border-[#facc15]/50 bg-transparent'
+              ? 'w-12 h-12 border-cyan-400 bg-cyan-500/10 shadow-[0_0_15px_rgba(6,182,212,0.4)]'
+              : 'w-7 h-7 border-cyan-500/40 bg-transparent'
           }`}
         />
       </div>
@@ -75,7 +75,7 @@ export default function CustomCursor() {
           transform: `translate3d(${pos.x - 3}px, ${pos.y - 3}px, 0)`,
         }}
       >
-        <div className="w-1.5 h-1.5 rounded-full bg-[#facc15] shadow-[0_0_8px_#ef4444]" />
+        <div className="w-1.5 h-1.5 rounded-full bg-cyan-400 shadow-[0_0_8px_rgba(6,182,212,0.8)]" />
       </div>
     </>
   );

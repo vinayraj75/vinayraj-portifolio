@@ -1,23 +1,22 @@
 import React, { useState } from 'react';
-import { ArrowDown, Sparkles, FileDown } from 'lucide-react';
+import { ArrowDown, Sparkles, FileDown, ArrowUpRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { personalInfo } from '../data/portfolioData';
 import { GithubIcon, LinkedinIcon } from './Icons';
-import profilePhoto from '../assets/profile/profile.jpg';
-import LightRays from './LightRays';
+import profilePhoto from '../assets/profile/profile.png';
 import { useTheme } from '../utils/ThemeContext';
-import StrokeText from './StrokeText';
 import TextType from './TextType';
+import StrokeText from './StrokeText';
 
 export default function Hero() {
-  const [mouseOffset, setMouseOffset] = useState({ x: 0, y: 0 });
   const { isDark } = useTheme();
+  const [mouseOffset, setMouseOffset] = useState({ x: 0, y: 0 });
 
   const handleMouseMove = (e) => {
     const { clientX, clientY } = e;
     const { innerWidth, innerHeight } = window;
-    const x = (clientX / innerWidth - 0.5) * 16;
-    const y = (clientY / innerHeight - 0.5) * 16;
+    const x = (clientX / innerWidth - 0.5) * 12;
+    const y = (clientY / innerHeight - 0.5) * 12;
     setMouseOffset({ x, y });
   };
 
@@ -25,270 +24,237 @@ export default function Hero() {
     <section
       id="home"
       onMouseMove={handleMouseMove}
-      className="relative min-h-screen flex items-center justify-center pt-28 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden"
+      className="relative min-h-screen flex flex-col justify-between pt-24 sm:pt-28 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden bg-[#06090f]"
     >
-      {/* Volumetric Cyber Light Rays from React Bits with dynamic theme adaptation */}
-      <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden opacity-50">
-        <LightRays
-          raysOrigin="top-center"
-          raysColor={isDark ? "#facc15" : "#ef4444"}
-          raysSpeed={1.2}
-          lightSpread={0.85}
-          rayLength={1.6}
-          followMouse={true}
-          mouseInfluence={0.12}
-          noiseAmount={0.06}
-          distortion={0.04}
-          pulsating={true}
-          fadeDistance={1.1}
-          saturation={1.0}
-          lightMode={!isDark}
-        />
-      </div>
+      {/* Subtle Ambient Vignette & Backlighting */}
+      <div
+        className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[450px] bg-gradient-to-b from-cyan-950/20 via-slate-900/10 to-transparent blur-[140px] pointer-events-none rounded-full"
+        aria-hidden="true"
+      />
+      <div
+        className="absolute bottom-10 right-10 w-96 h-96 bg-blue-900/10 blur-[130px] pointer-events-none rounded-full"
+        aria-hidden="true"
+      />
 
-      {/* Subtle radial glow layers */}
-      <div className={`absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full blur-[140px] pointer-events-none ${
-        isDark ? 'bg-[#facc15]/10' : 'bg-[#ef4444]/10'
-      }`} />
-      <div className="absolute bottom-10 right-10 w-[450px] h-[450px] bg-[#ef4444]/10 rounded-full blur-[120px] pointer-events-none" />
-
-      <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center relative z-10">
+      {/* ============================================================ */}
+      {/* 1. CINEMATIC SHOWCASE STAGE (Matching Reference Image)        */}
+      {/* ============================================================ */}
+      <div className="relative w-full max-w-7xl mx-auto flex flex-col items-center justify-center my-auto pt-4 sm:pt-8">
         
-        {/* Left Column: Typography & CTAs */}
-        <motion.div
-          initial={{ opacity: 0, y: 25 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-          className="lg:col-span-7 flex flex-col items-start text-left"
+        {/* Giant Background Word: DEVELOPER (Animated StrokeText from React Bits) */}
+        <div
+          className="w-screen left-1/2 -translate-x-1/2 flex items-center justify-center select-none pointer-events-none absolute top-1/2 -translate-y-1/2 z-0 overflow-visible"
+          aria-hidden="true"
         >
-          {/* Status Indicator */}
-          <div className={`inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full border backdrop-blur-md mb-6 shadow-sm ${
-            isDark
-              ? 'bg-[#18160f]/80 border-[#facc15]/30 text-[#facc15]'
-              : 'bg-white/80 border-[#ef4444]/30 text-[#dc2626]'
-          }`}>
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#facc15] opacity-75" />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#facc15]" />
-            </span>
-            <span className="text-[11px] font-mono uppercase tracking-widest font-semibold">
-              {personalInfo.statusBadge}
-            </span>
-          </div>
+          <StrokeText
+            text="DEVELOPER"
+            strokeColor="#38bdf8"
+            fillColor="url(#developer-silver-grad)"
+            strokeWidth={2.5}
+            drawDuration={1.8}
+            fillDelay={0.2}
+            stagger={0.06}
+            ease="power2.out"
+            trigger="mount"
+            fillMode="wipe"
+            fontSize={230}
+            fontWeight={900}
+            letterSpacing={6}
+            className="hero-stroke-text w-full flex items-center justify-center drop-shadow-[0_20px_50px_rgba(0,0,0,0.95)]"
+          />
+        </div>
 
-          {/* Main Title & Brand Identity */}
-          <h2 className={`text-xl sm:text-2xl font-mono mb-3 font-medium tracking-wide ${
-            isDark ? 'text-slate-300' : 'text-slate-600'
-          }`}>
-            <TextType
-              as="span"
-              text={[
-                "Hi, I'm Vinay.",
-                "Hi, I'm Chinnam Vinay."
-              ]}
-              typingSpeed={70}
-              pauseDuration={2200}
-              deletingSpeed={35}
-              showCursor={true}
-              cursorCharacter="|"
-              cursorClassName="text-[#facc15] font-bold"
-              className={isDark ? 'text-white font-bold' : 'text-slate-900 font-bold'}
+        {/* Center Portrait of Vinay in Suit (In front of DEVELOPER) */}
+        <motion.div
+          initial={{ opacity: 0, y: 30, scale: 0.98 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
+          className="relative z-10 w-72 sm:w-88 md:w-[440px] lg:w-[480px] xl:w-[520px] flex justify-center pointer-events-none"
+          style={{
+            transform: `translate3d(${mouseOffset.x}px, ${mouseOffset.y}px, 0)`,
+            transition: 'transform 0.25s cubic-bezier(0.16, 1, 0.3, 1)',
+          }}
+        >
+          <div className="relative w-full overflow-hidden [mask-image:linear-gradient(to_bottom,black_75%,transparent_98%)] [-webkit-mask-image:linear-gradient(to_bottom,black_75%,transparent_98%)]">
+            <img
+              src={profilePhoto}
+              alt="Chinnam Vinay — Software Developer"
+              className="w-full h-auto object-contain object-top filter brightness-[1.02] contrast-[1.02] drop-shadow-[0_20px_45px_rgba(0,0,0,0.9)]"
+              loading="eager"
             />
-          </h2>
-
-          <h1 className="w-full max-w-2xl mb-6">
-            <span className="sr-only">AIML Engineer</span>
-            <div className="w-full max-w-[260px] sm:max-w-[340px] md:max-w-[400px] -mb-1">
-              <StrokeText
-                text="AI / ML"
-                strokeColor={isDark ? "#facc15" : "#ea580c"}
-                fillColor={isDark ? "#ffffff" : "#09101f"}
-                strokeWidth={2.2}
-                drawDuration={1.4}
-                fillDelay={0.15}
-                stagger={0.06}
-                ease="power3.out"
-                trigger="mount"
-                fillMode="wipe"
-                fontSize={84}
-                fontWeight={900}
-                letterSpacing={-1}
-              />
-            </div>
-            <div className="w-full max-w-[330px] sm:max-w-[440px] md:max-w-[500px]">
-              <StrokeText
-                text="ENGINEER"
-                strokeColor="#ef4444"
-                fillColor="#facc15"
-                strokeWidth={2.2}
-                drawDuration={1.6}
-                fillDelay={0.25}
-                stagger={0.05}
-                ease="power3.out"
-                trigger="mount"
-                fillMode="wipe"
-                fontSize={84}
-                fontWeight={900}
-                letterSpacing={-1}
-              />
-            </div>
-          </h1>
-
-          {/* Supporting Statements */}
-          <p className={`text-base sm:text-lg max-w-2xl leading-relaxed mb-3 ${
-            isDark ? 'text-slate-300' : 'text-slate-700'
-          }`}>
-            {personalInfo.tagline}
-          </p>
-          <p className={`text-xs sm:text-sm font-mono max-w-xl mb-8 flex items-center gap-2 ${
-            isDark ? 'text-slate-400' : 'text-slate-500'
-          }`}>
-            <Sparkles className="w-3.5 h-3.5 text-[#facc15]" />
-            {personalInfo.secondaryTagline}
-          </p>
-
-          {/* Action CTAs: With Resume Download Option */}
-          <div className="flex flex-wrap items-center gap-3.5 w-full sm:w-auto">
-            {/* View Projects CTA */}
-            <a
-              href="#projects"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3.5 text-xs font-bold uppercase tracking-wider text-slate-950 bg-gradient-to-r from-[#facc15] via-[#fb923c] to-[#ef4444] rounded-xl shadow-[0_0_25px_rgba(250,204,21,0.4)] hover:shadow-[0_0_35px_rgba(239,68,68,0.7)] transition-all hover:scale-[1.02] active:scale-[0.98]"
-            >
-              <span>View My Projects</span>
-            </a>
-
-            {/* Download Resume Option */}
-            <a
-              href={personalInfo.resumeUrl}
-              download={personalInfo.resumeFileName}
-              target="_blank"
-              rel="noreferrer"
-              className={`w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 text-xs font-mono font-bold uppercase tracking-wider rounded-xl border transition-all hover:scale-[1.02] ${
-                isDark
-                  ? 'bg-[#151722] hover:bg-[#1f2334] text-[#facc15] border-[#facc15]/40 shadow-[0_0_15px_rgba(250,204,21,0.2)]'
-                  : 'bg-white hover:bg-slate-50 text-[#dc2626] border-[#ef4444]/50 shadow-md'
-              }`}
-              title="Download Resume PDF"
-            >
-              <FileDown className="w-4 h-4 text-[#ef4444]" />
-              <span>Download Resume</span>
-            </a>
-
-            {/* Social Buttons */}
-            <div className="flex items-center gap-2.5 w-full sm:w-auto">
-              <a
-                href={personalInfo.socials.github}
-                target="_blank"
-                rel="noreferrer"
-                className={`flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 px-4 py-3.5 text-xs font-semibold uppercase tracking-wider rounded-xl border transition-all hover:scale-[1.02] ${
-                  isDark
-                    ? 'text-slate-200 bg-[#121624]/90 hover:bg-[#1a2034] border-white/10 hover:border-[#facc15]/50'
-                    : 'text-slate-700 bg-white hover:bg-slate-50 border-slate-200 shadow-sm'
-                }`}
-                title="GitHub"
-              >
-                <GithubIcon className="w-4 h-4 text-[#facc15]" />
-                <span>GitHub</span>
-              </a>
-
-              <a
-                href={personalInfo.socials.linkedin}
-                target="_blank"
-                rel="noreferrer"
-                className={`flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 px-4 py-3.5 text-xs font-semibold uppercase tracking-wider rounded-xl border transition-all hover:scale-[1.02] ${
-                  isDark
-                    ? 'text-slate-200 bg-[#121624]/90 hover:bg-[#1a2034] border-white/10 hover:border-[#ef4444]/50'
-                    : 'text-slate-700 bg-white hover:bg-slate-50 border-slate-200 shadow-sm'
-                }`}
-                title="LinkedIn"
-              >
-                <LinkedinIcon className="w-4 h-4 text-[#ef4444]" />
-                <span>LinkedIn</span>
-              </a>
-            </div>
-          </div>
-
-          {/* Honest Micro Credentials */}
-          <div className={`mt-8 pt-6 border-t flex flex-wrap items-center gap-6 text-xs font-mono ${
-            isDark ? 'border-white/10 text-slate-400' : 'border-slate-200 text-slate-600'
-          }`}>
-            <div>
-              <span className="text-slate-500">DEGREE:</span>{' '}
-              <span className={isDark ? 'text-slate-200' : 'text-slate-800'}>B.Tech AIML (2024 — 2028)</span>
-            </div>
-            <div>
-              <span className="text-slate-500">LOCATION:</span>{' '}
-              <span className={isDark ? 'text-slate-200' : 'text-slate-800'}>Eluru, AP, India</span>
-            </div>
-            <div>
-              <span className="text-slate-500">PRIMARY:</span>{' '}
-              <span className="text-[#facc15] font-bold">Python</span>
-            </div>
           </div>
         </motion.div>
 
-        {/* Right Column: Authentic Profile Portrait */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-          className="lg:col-span-5 flex items-center justify-center relative"
-          style={{
-            transform: `translate3d(${mouseOffset.x}px, ${mouseOffset.y}px, 0)`,
-            transition: 'transform 0.2s cubic-bezier(0.16, 1, 0.3, 1)',
-          }}
-        >
-          <div className="relative w-64 h-64 sm:w-80 sm:h-80 xl:w-96 xl:h-96">
-            
-            {/* Cinematic background halo */}
-            <div className="absolute inset-0 rounded-3xl bg-gradient-to-tr from-[#facc15]/25 via-transparent to-[#ef4444]/25 blur-2xl transform -rotate-3" />
+        {/* Flanking Overlay Controls (Left: Software Developer, Right: Contact) */}
+        <div className="w-full max-w-6xl mx-auto flex items-end justify-between px-4 sm:px-8 relative z-20 -mt-8 sm:-mt-12 md:-mt-16 pointer-events-auto">
+          {/* Bottom-Left: Title */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-left"
+          >
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold font-display text-white tracking-tight leading-none">
+              Software <span className="font-light italic text-slate-300">Developer</span>
+            </h1>
+            <p className="text-xs sm:text-sm font-mono text-cyan-400 mt-2 font-medium flex items-center gap-2">
+              <span className="inline-block w-2 h-2 rounded-full bg-cyan-400"></span>
+              AI / ML Engineer • Chinnam Vinay
+            </p>
+          </motion.div>
 
-            {/* Glowing outer bezel */}
-            <div className="relative w-full h-full rounded-3xl p-[2px] bg-gradient-to-tr from-[#facc15] via-[#fb923c] to-[#ef4444] shadow-[0_0_40px_rgba(250,204,21,0.25)]">
-              
-              {/* Inner card container */}
-              <div className="w-full h-full rounded-[22px] overflow-hidden bg-[#0a101d] relative group">
-                <img
-                  src={profilePhoto}
-                  alt="Vinay - AI/ML Engineer"
-                  className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
-                  loading="eager"
-                />
+          {/* Bottom-Right: Contact Button (Matching reference pill) */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="flex items-center"
+          >
+            <a
+              href="#contact"
+              className="inline-flex items-center gap-3 px-5 sm:px-7 py-2.5 sm:py-3.5 rounded-full bg-slate-900/90 hover:bg-slate-800 border border-white/20 hover:border-cyan-400/50 text-white backdrop-blur-xl shadow-xl transition-all hover:scale-105 group"
+            >
+              <div className="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-cyan-500 group-hover:text-slate-950 transition-all duration-300">
+                <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              </div>
+              <span className="text-xs sm:text-sm font-medium tracking-wide">Contact</span>
+            </a>
+          </motion.div>
+        </div>
+      </div>
 
-                {/* Subtle vignette overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#06090f]/90 via-transparent to-transparent opacity-80" />
+      {/* ============================================================ */}
+      {/* 2. FURTHER INFORMATION (Arranged Elegantly Below Picture)      */}
+      {/* ============================================================ */}
+      <motion.div
+        initial={{ opacity: 0, y: 25 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
+        className="max-w-5xl mx-auto w-full mt-10 sm:mt-14 relative z-20"
+      >
+        <div className="p-6 sm:p-8 rounded-3xl bg-slate-900/60 border border-white/10 backdrop-blur-xl shadow-[0_16px_40px_rgba(0,0,0,0.6)]">
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 pb-6 border-b border-white/10">
+            {/* Status Capsule */}
+            <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-white/10 bg-slate-950/70 text-cyan-300 text-xs font-mono shadow-sm">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-400" />
+              </span>
+              <span className="font-semibold uppercase tracking-wider text-[11px]">
+                {personalInfo.statusBadge}
+              </span>
+            </div>
 
-                {/* Cyber badge at bottom of portrait */}
-                <div className="absolute bottom-3 left-3 right-3 py-2 px-3 bg-[#06090f]/85 backdrop-blur-md rounded-xl border border-white/10 flex items-center justify-between">
-                  <div>
-                    <p className="text-[11px] font-bold text-white keep-white tracking-wider font-display">CHINNAM VINAY</p>
-                    <p className="text-[9px] font-mono text-[#facc15]">AIML • Ramachandra Eng College</p>
-                  </div>
-                  <div className="flex items-center gap-1 text-[10px] font-mono text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/20">
-                    <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
-                    <span>ACTIVE</span>
-                  </div>
-                </div>
+            {/* Dynamic Intro Type */}
+            <div className="text-xs sm:text-sm font-mono text-slate-300">
+              <TextType
+                as="span"
+                text={[
+                  "Hi, I'm Vinay — AI/ML Engineer",
+                  "Building intelligent, scalable solutions",
+                  "Turning ideas into real-world technology"
+                ]}
+                typingSpeed={60}
+                pauseDuration={2200}
+                deletingSpeed={30}
+                showCursor={true}
+                cursorCharacter="|"
+                cursorClassName="text-cyan-400 font-bold"
+                className="text-white font-semibold"
+              />
+            </div>
+          </div>
+
+          {/* Tagline Statement */}
+          <div className="py-6">
+            <p className="text-base sm:text-lg text-slate-200 leading-relaxed font-normal max-w-3xl">
+              {personalInfo.tagline}
+            </p>
+            <p className="text-xs sm:text-sm font-mono text-slate-400 mt-2 flex items-center gap-2">
+              <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
+              {personalInfo.secondaryTagline}
+            </p>
+          </div>
+
+          {/* Action CTAs & Credentials Grid */}
+          <div className="pt-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 border-t border-white/5">
+            {/* Action Buttons */}
+            <div className="flex flex-wrap items-center gap-3 w-full sm:w-auto">
+              <a
+                href="#projects"
+                className="inline-flex items-center justify-center px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-white bg-gradient-to-r from-cyan-500 via-sky-500 to-blue-600 rounded-xl shadow-[0_0_20px_rgba(6,182,212,0.35)] hover:shadow-[0_0_30px_rgba(56,189,248,0.5)] transition-all hover:scale-105"
+              >
+                <span>View My Projects</span>
+              </a>
+
+              <a
+                href={personalInfo.resumeUrl}
+                download={personalInfo.resumeFileName}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center justify-center gap-2 px-4 py-2.5 text-xs font-mono font-bold uppercase tracking-wider rounded-xl border border-cyan-500/30 bg-slate-950/70 hover:bg-slate-900 text-cyan-300 transition-all hover:scale-105"
+                title="Download Resume PDF"
+              >
+                <FileDown className="w-3.5 h-3.5 text-cyan-400" />
+                <span>Resume</span>
+              </a>
+
+              <div className="flex items-center gap-2">
+                <a
+                  href={personalInfo.socials.github}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="p-2.5 rounded-xl border border-white/10 hover:border-cyan-500/50 bg-slate-950/70 hover:bg-slate-900 text-slate-300 hover:text-cyan-300 transition-all"
+                  title="GitHub"
+                  aria-label="GitHub Profile"
+                >
+                  <GithubIcon className="w-4 h-4 text-cyan-400" />
+                </a>
+
+                <a
+                  href={personalInfo.socials.linkedin}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="p-2.5 rounded-xl border border-white/10 hover:border-cyan-500/50 bg-slate-950/70 hover:bg-slate-900 text-slate-300 hover:text-cyan-300 transition-all"
+                  title="LinkedIn"
+                  aria-label="LinkedIn Profile"
+                >
+                  <LinkedinIcon className="w-4 h-4 text-cyan-400" />
+                </a>
+              </div>
+            </div>
+
+            {/* Quick Micro Credentials */}
+            <div className="flex flex-wrap items-center gap-4 text-xs font-mono text-slate-400">
+              <div>
+                <span className="text-slate-500">DEGREE:</span>{' '}
+                <span className="text-slate-200">B.Tech AIML (2024–2028)</span>
+              </div>
+              <div>
+                <span className="text-slate-500">LOCATION:</span>{' '}
+                <span className="text-slate-200">Eluru, AP, India</span>
+              </div>
+              <div>
+                <span className="text-slate-500">PRIMARY:</span>{' '}
+                <span className="text-cyan-400 font-bold">Python</span>
               </div>
             </div>
           </div>
-        </motion.div>
-      </div>
+        </div>
 
-      {/* Scroll Down Indicator */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 pointer-events-none opacity-70 hover:opacity-100 transition-opacity">
-        <span className={`text-[10px] font-mono uppercase tracking-[0.25em] ${
-          isDark ? 'text-slate-400' : 'text-slate-500'
-        }`}>
-          SCROLL TO EXPLORE
-        </span>
-        <motion.div
-          animate={{ y: [0, 6, 0] }}
-          transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}
-        >
-          <ArrowDown className="w-4 h-4 text-[#facc15]" />
-        </motion.div>
-      </div>
+        {/* Scroll To Explore Indicator */}
+        <div className="flex flex-col items-center gap-1.5 mt-8 opacity-70 hover:opacity-100 transition-opacity">
+          <span className="text-[10px] font-mono uppercase tracking-[0.25em] text-slate-400">
+            SCROLL TO EXPLORE
+          </span>
+          <motion.div
+            animate={{ y: [0, 5, 0] }}
+            transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}
+          >
+            <ArrowDown className="w-4 h-4 text-cyan-400" />
+          </motion.div>
+        </div>
+      </motion.div>
     </section>
   );
 }

@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
+import NexLayerSection from './components/NexLayerSection';
 import Skills from './components/Skills';
 import TechStack from './components/TechStack';
 import Projects from './components/Projects';
@@ -21,7 +22,7 @@ import { ThemeProvider } from './utils/ThemeContext';
 export default function App() {
   return (
     <ThemeProvider>
-      <div className="relative min-h-screen bg-[var(--bg-primary)] text-[var(--text-primary)] transition-colors duration-300 overflow-x-hidden selection:bg-[#facc15]/25 selection:text-[#facc15]">
+      <div className="relative min-h-screen bg-[var(--bg-primary)] text-[var(--text-primary)] transition-colors duration-300 overflow-x-hidden selection:bg-cyan-500/25 selection:text-cyan-300">
         {/* Background Interactive Ambient Canvas */}
         <BackgroundCanvas />
 
@@ -42,6 +43,7 @@ export default function App() {
         <main className="relative z-10 flex flex-col">
           <Hero />
           <About />
+          <NexLayerSection />
           <Skills />
           <TechStack />
           <Projects />

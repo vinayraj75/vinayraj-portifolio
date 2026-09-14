@@ -8,16 +8,16 @@ export default function HackathonSection() {
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-amber-500/10 border border-amber-500/20 text-amber-400 font-mono text-xs uppercase tracking-widest mb-3">
-              <Trophy className="w-3.5 h-3.5" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/70 backdrop-blur-xl border border-white/10 text-cyan-400 font-mono text-xs uppercase tracking-widest mb-3 shadow-sm">
+              <Trophy className="w-3.5 h-3.5 text-cyan-400" />
               <span>04. Competitive Problem Solving</span>
             </div>
             <h2 className="text-3xl sm:text-5xl font-black font-display tracking-tight text-white">
-              HACKATHON & <span className="bg-gradient-to-r from-amber-300 via-amber-400 to-orange-400 bg-clip-text text-transparent">INNOVATION</span>
+              HACKATHON &amp; <span className="bg-gradient-to-r from-cyan-400 via-sky-400 to-blue-500 bg-clip-text text-transparent">INNOVATION</span>
             </h2>
           </div>
           <div className="mt-3 md:mt-0 flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-[#0e172a] border border-white/10 font-mono text-xs text-slate-300">
-            <Users className="w-4 h-4 text-[#facc15]" />
+            <Users className="w-4 h-4 text-cyan-400" />
             <span>Team Identity:</span>
             <strong className="text-white tracking-wider">{personalInfo.hackathonTeam}</strong>
           </div>
@@ -25,11 +25,11 @@ export default function HackathonSection() {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
           {/* Main Prakalp Achievement Card */}
-          <div className="lg:col-span-8 glass-card rounded-3xl p-7 sm:p-8 border border-amber-500/30 relative overflow-hidden bg-gradient-to-br from-[#131b2e] via-[#0d1424] to-[#080d1a]">
-            <div className="absolute -top-10 -right-10 w-48 h-48 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="lg:col-span-8 glass-card rounded-3xl p-7 sm:p-8 border border-cyan-500/30 relative overflow-hidden bg-gradient-to-br from-[#131b2e] via-[#0d1424] to-[#080d1a]">
+            <div className="absolute -top-10 -right-10 w-48 h-48 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
 
             <div className="flex items-center gap-3 mb-4">
-              <span className="px-3 py-1 rounded-full text-xs font-mono font-bold text-amber-300 bg-amber-400/10 border border-amber-400/30 flex items-center gap-1.5">
+              <span className="px-3 py-1 rounded-full text-xs font-mono font-bold text-cyan-300 bg-cyan-500/10 border border-cyan-500/30 flex items-center gap-1.5">
                 <Trophy className="w-3.5 h-3.5" />
                 3rd Prize Winner
               </span>
@@ -43,7 +43,7 @@ export default function HackathonSection() {
             </h3>
 
             <p className="text-sm sm:text-base text-slate-300 leading-relaxed mb-6 max-w-2xl">
-              Engineered and pitched a rapid technical solution under strict competitive deadlines, winning <span className="text-amber-300 font-bold">3rd Prize</span> against participating teams.
+              Engineered and pitched a rapid technical solution under strict competitive deadlines, winning <span className="text-cyan-300 font-bold">3rd Prize</span> against participating teams.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-4 border-t border-white/10">
@@ -53,7 +53,7 @@ export default function HackathonSection() {
               </div>
               <div className="p-3 rounded-xl bg-[#06090f]/70 border border-white/5">
                 <span className="text-[10px] font-mono text-slate-500 uppercase block">RECOGNITION</span>
-                <span className="text-xs font-bold text-amber-400 font-display">Podium Finish (3rd)</span>
+                <span className="text-xs font-bold text-cyan-300 font-display">Podium Finish (3rd)</span>
               </div>
               <div className="p-3 rounded-xl bg-[#06090f]/70 border border-white/5">
                 <span className="text-[10px] font-mono text-slate-500 uppercase block">OUTCOME</span>
@@ -65,7 +65,7 @@ export default function HackathonSection() {
           {/* Side Card: Hackathon Culture */}
           <div className="lg:col-span-4 glass-card rounded-3xl p-7 border border-white/10 flex flex-col justify-between">
             <div>
-              <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-[#facc15] mb-3">
+              <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-cyan-400 mb-3">
                 <Zap className="w-4 h-4" />
                 Sprint Philosophy
               </div>

@@ -29,21 +29,21 @@ export default function Contact() {
   return (
     <section id="contact" className="py-24 px-4 sm:px-6 lg:px-8 relative">
       {/* Ambient background glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] bg-[#facc15]/10 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] bg-cyan-500/10 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
           
           {/* Left Column: Heading & Social CTAs */}
           <div className="lg:col-span-6 space-y-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#facc15]/10 border border-[#facc15]/20 text-[#facc15] font-mono text-xs uppercase tracking-widest">
-              <MessageSquare className="w-3.5 h-3.5" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/70 backdrop-blur-xl border border-white/10 text-cyan-400 font-mono text-xs uppercase tracking-widest shadow-sm">
+              <MessageSquare className="w-3.5 h-3.5 text-cyan-400" />
               <span>10. Get In Touch</span>
             </div>
 
             <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black font-display tracking-tight text-white leading-tight">
               LET'S BUILD <br />
-              <span className="bg-gradient-to-r from-[#facc15] via-[#fb923c] to-[#ef4444] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-cyan-400 via-sky-400 to-blue-500 bg-clip-text text-transparent">
                 SOMETHING INTELLIGENT.
               </span>
             </h2>
@@ -60,23 +60,23 @@ export default function Contact() {
                 rel="noreferrer"
                 className={`inline-flex items-center gap-2 px-5 py-3.5 rounded-xl text-xs font-mono font-bold uppercase tracking-wider transition-all hover:scale-105 ${
                   isDark
-                    ? 'text-[#facc15] bg-[#0c162a] hover:bg-[#132342] border border-[#facc15]/40 shadow-[0_0_15px_rgba(250,204,21,0.2)]'
-                    : 'text-[#090d16] bg-white hover:bg-slate-50 border border-slate-300 shadow-md hover:border-[#facc15]'
+                    ? 'text-cyan-300 bg-[#0c162a] hover:bg-[#132342] border border-cyan-500/40 shadow-[0_0_15px_rgba(6,182,212,0.2)]'
+                    : 'text-[#090d16] bg-white hover:bg-slate-50 border border-slate-300 shadow-md hover:border-cyan-500'
                 }`}
                 title="Download Resume PDF"
               >
-                <FileDown className="w-4 h-4 text-[#ef4444]" />
-                <span className={isDark ? 'text-[#facc15]' : 'text-[#090d16] font-bold'}>Download Resume</span>
+                <FileDown className="w-4 h-4 text-cyan-400" />
+                <span className={isDark ? 'text-cyan-300' : 'text-[#090d16] font-bold'}>Download Resume</span>
               </a>
 
               <a
                 href={personalInfo.socials.linkedin}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl text-xs font-bold uppercase tracking-wider text-slate-900 bg-gradient-to-r from-[#facc15] via-[#fb923c] to-[#ef4444] hover:shadow-[0_0_25px_rgba(239,68,68,0.5)] transition-all hover:scale-105 active:scale-95 shadow-md"
+                className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl text-xs font-bold uppercase tracking-wider text-white bg-gradient-to-r from-cyan-500 via-sky-500 to-blue-600 hover:shadow-[0_0_25px_rgba(6,182,212,0.45)] transition-all hover:scale-105 active:scale-95 shadow-md"
               >
                 <LinkedinIcon className="w-4 h-4" />
-                <span className="keep-white text-slate-900 font-bold">Connect on LinkedIn</span>
+                <span className="keep-white text-white font-bold">Connect on LinkedIn</span>
                 <ArrowUpRight className="w-3.5 h-3.5" />
               </a>
 
@@ -86,11 +86,11 @@ export default function Contact() {
                 rel="noreferrer"
                 className={`inline-flex items-center gap-2 px-5 py-3.5 rounded-xl text-xs font-semibold uppercase tracking-wider transition-all hover:scale-105 ${
                   isDark
-                    ? 'text-slate-200 bg-[#0c162a] hover:bg-[#132342] border border-white/10 hover:border-[#facc15]/40'
-                    : 'text-[#090d16] bg-white hover:bg-slate-50 border border-slate-300 shadow-md hover:border-[#facc15]'
+                    ? 'text-slate-200 bg-[#0c162a] hover:bg-[#132342] border border-white/10 hover:border-cyan-500/40'
+                    : 'text-[#090d16] bg-white hover:bg-slate-50 border border-slate-300 shadow-md hover:border-cyan-500'
                 }`}
               >
-                <GithubIcon className="w-4 h-4 text-[#facc15]" />
+                <GithubIcon className="w-4 h-4 text-cyan-400" />
                 <span className={isDark ? 'text-slate-200' : 'text-[#090d16] font-bold'}>Follow on GitHub</span>
               </a>
 
@@ -99,11 +99,11 @@ export default function Contact() {
                   href={`mailto:${personalInfo.socials.email}`}
                   className={`inline-flex items-center gap-2 px-5 py-3.5 rounded-xl text-xs font-semibold uppercase tracking-wider transition-all hover:scale-105 ${
                     isDark
-                      ? 'text-slate-200 bg-[#0c162a] hover:bg-[#132342] border border-white/10 hover:border-[#ef4444]/40'
-                      : 'text-[#090d16] bg-white hover:bg-slate-50 border border-slate-300 shadow-md hover:border-[#ef4444]'
+                      ? 'text-slate-200 bg-[#0c162a] hover:bg-[#132342] border border-white/10 hover:border-cyan-500/40'
+                      : 'text-[#090d16] bg-white hover:bg-slate-50 border border-slate-300 shadow-md hover:border-cyan-500'
                   }`}
                 >
-                  <Mail className="w-4 h-4 text-[#ef4444]" />
+                  <Mail className="w-4 h-4 text-cyan-400" />
                   <span className={isDark ? 'text-slate-200' : 'text-[#090d16] font-bold'}>Email Me</span>
                 </a>
               )}
@@ -127,8 +127,8 @@ export default function Contact() {
                 onClick={handleCopyLinkedIn}
                 className={`p-2.5 rounded-xl border shrink-0 transition-colors ${
                   isDark
-                    ? 'bg-white/5 hover:bg-[#facc15]/20 text-slate-300 hover:text-[#facc15] border-white/5'
-                    : 'bg-slate-100 hover:bg-slate-200 text-[#090d16] hover:text-[#facc15] border-slate-300 shadow-sm'
+                    ? 'bg-white/5 hover:bg-cyan-500/20 text-slate-300 hover:text-cyan-400 border-white/5'
+                    : 'bg-slate-100 hover:bg-slate-200 text-[#090d16] hover:text-cyan-600 border-slate-300 shadow-sm'
                 }`}
                 title="Copy LinkedIn URL"
               >
@@ -158,7 +158,7 @@ export default function Contact() {
                     href={personalInfo.socials.linkedin}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-block mt-2 px-4 py-2 rounded-xl text-xs font-bold text-slate-900 bg-[#facc15]"
+                    className="inline-block mt-2 px-4 py-2 rounded-xl text-xs font-bold text-white bg-gradient-to-r from-cyan-500 to-blue-600"
                   >
                     Open Vinay's LinkedIn
                   </a>
@@ -175,7 +175,7 @@ export default function Contact() {
                       placeholder="e.g. Alex Miller"
                       value={formState.name}
                       onChange={(e) => setFormState({ ...formState, name: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl bg-[#06090f]/80 border border-white/10 text-white placeholder-slate-600 text-sm focus:outline-none focus:border-[#facc15] focus:ring-1 focus:ring-[#facc15] transition-all font-sans"
+                      className="w-full px-4 py-3 rounded-xl bg-[#06090f]/80 border border-white/10 text-white placeholder-slate-600 text-sm focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-all font-sans"
                     />
                   </div>
 
@@ -189,7 +189,7 @@ export default function Contact() {
                       placeholder="alex@company.com"
                       value={formState.email}
                       onChange={(e) => setFormState({ ...formState, email: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl bg-[#06090f]/80 border border-white/10 text-white placeholder-slate-600 text-sm focus:outline-none focus:border-[#facc15] focus:ring-1 focus:ring-[#facc15] transition-all font-sans"
+                      className="w-full px-4 py-3 rounded-xl bg-[#06090f]/80 border border-white/10 text-white placeholder-slate-600 text-sm focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-all font-sans"
                     />
                   </div>
 
@@ -203,13 +203,13 @@ export default function Contact() {
                       placeholder="Briefly describe your idea, requirement, or opportunity..."
                       value={formState.message}
                       onChange={(e) => setFormState({ ...formState, message: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl bg-[#06090f]/80 border border-white/10 text-white placeholder-slate-600 text-sm focus:outline-none focus:border-[#facc15] focus:ring-1 focus:ring-[#facc15] transition-all resize-none font-sans"
+                      className="w-full px-4 py-3 rounded-xl bg-[#06090f]/80 border border-white/10 text-white placeholder-slate-600 text-sm focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-all resize-none font-sans"
                     />
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full py-3.5 px-6 rounded-xl font-bold uppercase tracking-wider text-xs text-slate-950 bg-gradient-to-r from-[#facc15] via-[#fb923c] to-[#ef4444] hover:shadow-[0_0_20px_rgba(250,204,21,0.4)] transition-all flex items-center justify-center gap-2"
+                    className="w-full py-3.5 px-6 rounded-xl font-bold uppercase tracking-wider text-xs text-white bg-gradient-to-r from-cyan-500 via-sky-500 to-blue-600 hover:shadow-[0_0_20px_rgba(6,182,212,0.4)] transition-all flex items-center justify-center gap-2"
                   >
                     <Send className="w-4 h-4" />
                     <span>Send Inquiry</span>

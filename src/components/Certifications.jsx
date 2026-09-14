@@ -10,15 +10,15 @@ export default function Certifications() {
     <section id="certifications" className="py-24 px-4 sm:px-6 lg:px-8 relative">
       <div className="max-w-7xl mx-auto">
         
-        {/* Section Header */}
+        {/* Section Header with Frosted Glass Back */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#facc15]/10 border border-[#facc15]/20 text-[#facc15] font-mono text-xs uppercase tracking-widest mb-3">
-              <Award className="w-3.5 h-3.5" />
-              <span>05. Credentials & Training</span>
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/70 backdrop-blur-xl border border-white/10 text-cyan-400 font-mono text-xs uppercase tracking-widest mb-3 shadow-sm">
+              <Award className="w-3.5 h-3.5 text-cyan-400" />
+              <span>05. Credentials &amp; Training</span>
             </div>
             <h2 className="text-3xl sm:text-5xl font-black font-display tracking-tight text-white">
-              VERIFIED <span className="bg-gradient-to-r from-[#facc15] via-[#fb923c] to-[#ef4444] bg-clip-text text-transparent">CERTIFICATIONS</span>
+              VERIFIED <span className="bg-gradient-to-r from-cyan-400 via-sky-400 to-blue-500 bg-clip-text text-transparent">CERTIFICATIONS</span>
             </h2>
           </div>
           <p className="text-xs font-mono text-slate-400 mt-3 md:mt-0 max-w-sm">
@@ -28,12 +28,12 @@ export default function Certifications() {
 
         {/* Featured Card: NPTEL Elite */}
         {featured && (
-          <div className="glass-card rounded-3xl p-7 sm:p-9 border border-[#facc15]/30 mb-8 relative overflow-hidden bg-gradient-to-br from-[#0c192f] via-[#091122] to-[#06090f]">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-[#facc15]/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="glass-card rounded-3xl p-7 sm:p-9 border border-cyan-500/30 mb-8 relative overflow-hidden bg-gradient-to-br from-[#0c192f] via-[#091122] to-[#06090f]">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
 
             <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
               <div className="flex items-center gap-3">
-                <span className="px-3.5 py-1 rounded-full text-xs font-mono font-bold text-slate-900 bg-gradient-to-r from-[#facc15] to-[#ef4444] shadow-[0_0_15px_rgba(250,204,21,0.4)]">
+                <span className="px-3.5 py-1 rounded-full text-xs font-mono font-bold text-white bg-gradient-to-r from-cyan-500 to-blue-600 shadow-[0_0_15px_rgba(6,182,212,0.4)]">
                   {featured.type}
                 </span>
                 <span className="text-xs font-mono text-slate-400">
@@ -51,7 +51,7 @@ export default function Certifications() {
                 <h3 className="text-2xl sm:text-3xl font-black font-display text-white mb-2">
                   {featured.title}
                 </h3>
-                <p className="text-sm font-mono text-[#facc15] mb-4">
+                <p className="text-sm font-mono text-cyan-300 mb-4">
                   Administered by IIT Kharagpur through NPTEL
                 </p>
                 <p className="text-sm text-slate-300 leading-relaxed mb-6">
@@ -65,7 +65,7 @@ export default function Certifications() {
                   </div>
                   <div className="p-3 rounded-xl bg-[#060a14]/80 border border-white/5">
                     <span className="text-[10px] font-mono text-slate-500 uppercase block">Academic Score</span>
-                    <span className="text-xs font-bold text-amber-300 font-display">{featured.score}</span>
+                    <span className="text-xs font-bold text-cyan-300 font-display">{featured.score}</span>
                   </div>
                   <div className="p-3 rounded-xl bg-[#060a14]/80 border border-white/5">
                     <span className="text-[10px] font-mono text-slate-500 uppercase block">Credits</span>
@@ -79,7 +79,7 @@ export default function Certifications() {
               </div>
 
               <div className="lg:col-span-4 flex flex-col items-center justify-center p-6 rounded-2xl bg-[#06090f]/70 border border-white/10 text-center">
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-tr from-[#facc15]/20 to-[#ef4444]/20 border border-[#facc15]/30 flex items-center justify-center mb-3 text-[#facc15]">
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-tr from-cyan-500/20 to-blue-500/20 border border-cyan-500/30 flex items-center justify-center mb-3 text-cyan-400">
                   <BookMarked className="w-8 h-8" />
                 </div>
                 <span className="text-sm font-bold text-white font-display mb-1">IIT Kharagpur NPTEL</span>
@@ -94,21 +94,21 @@ export default function Certifications() {
 
         {/* Other Technical Certifications */}
         <h4 className="text-sm font-mono uppercase tracking-widest text-slate-400 mb-4 font-semibold">
-          Additional Specialized Curriculum & Foundations
+          Additional Specialized Curriculum &amp; Foundations
         </h4>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {others.map((cert) => (
             <div
               key={cert.id}
-              className="glass-card p-5 rounded-2xl border border-white/5 hover:border-white/20 transition-all flex flex-col justify-between"
+              className="glass-card p-5 rounded-2xl border border-white/5 hover:border-cyan-500/30 transition-all flex flex-col justify-between"
             >
               <div>
                 <div className="flex items-center justify-between gap-2 mb-3">
                   <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-white/5 text-slate-300 border border-white/5">
                     {cert.type}
                   </span>
-                  <span className="text-[10px] font-mono text-[#facc15]">
+                  <span className="text-[10px] font-mono text-cyan-300">
                     {cert.period}
                   </span>
                 </div>

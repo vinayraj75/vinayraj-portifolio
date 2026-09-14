@@ -71,22 +71,24 @@ export default function Navbar() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
-        isScrolled
-          ? isDark
-            ? 'py-3 bg-[#06090f]/85 backdrop-blur-md border-b border-white/10 shadow-[0_10px_30px_rgba(0,0,0,0.5)]'
-            : 'py-3 bg-white/85 backdrop-blur-md border-b border-slate-200 shadow-[0_10px_30px_rgba(0,0,0,0.05)]'
-          : 'py-5 bg-transparent'
+        isDark
+          ? isScrolled
+            ? 'py-2.5 bg-[#06090f]/90 backdrop-blur-xl border-b border-white/10 shadow-[0_10px_30px_rgba(0,0,0,0.6)]'
+            : 'py-3.5 bg-[#06090f]/75 backdrop-blur-xl border-b border-white/10 shadow-[0_8px_25px_rgba(0,0,0,0.4)]'
+          : isScrolled
+            ? 'py-2.5 bg-white/90 backdrop-blur-xl border-b border-slate-200 shadow-[0_10px_30px_rgba(0,0,0,0.06)]'
+            : 'py-3.5 bg-white/75 backdrop-blur-xl border-b border-slate-200/80 shadow-sm'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-        {/* Left spacer to maintain navbar balance */}
-        <div className="hidden lg:block w-10" />
+        {/* Left spacer to keep navigation centered */}
+        <div className="w-0 sm:w-8" aria-hidden="true" />
 
         {/* Center: Desktop Navigation Links */}
         <nav
           className={`hidden lg:flex items-center gap-1 backdrop-blur-lg px-4 py-1.5 rounded-full border shadow-inner transition-colors ${
             isDark
-              ? 'bg-[#0b1221]/70 border-white/10'
+              ? 'bg-[#0b1221]/80 border-white/10'
               : 'bg-white/80 border-slate-200 shadow-sm'
           }`}
         >
@@ -99,7 +101,7 @@ export default function Navbar() {
                 onClick={(e) => handleNavClick(e, item.href)}
                 className={`relative px-3.5 py-1.5 text-xs font-medium tracking-wide rounded-full transition-all duration-200 ${
                   isActive
-                    ? 'text-[#facc15] bg-[#facc15]/10 border border-[#facc15]/30 shadow-[0_0_12px_rgba(250,204,21,0.25)]'
+                    ? 'text-cyan-400 bg-cyan-500/10 border border-cyan-500/30 shadow-[0_0_12px_rgba(6,182,212,0.25)]'
                     : isDark
                     ? 'text-slate-300 hover:text-white hover:bg-white/5'
                     : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
@@ -118,7 +120,7 @@ export default function Navbar() {
             onClick={toggleTheme}
             className={`p-2 rounded-xl border transition-all duration-200 ${
               isDark
-                ? 'bg-[#0d1627] hover:bg-[#15233e] text-amber-400 border-white/10'
+                ? 'bg-[#0d1627] hover:bg-[#15233e] text-cyan-400 border-white/10'
                 : 'bg-slate-100 hover:bg-slate-200 text-slate-700 border-slate-200'
             }`}
             title={isDark ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
@@ -135,12 +137,12 @@ export default function Navbar() {
             rel="noreferrer"
             className={`hidden sm:inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-mono font-semibold uppercase tracking-wider rounded-xl border transition-all hover:scale-105 ${
               isDark
-                ? 'bg-[#0d1829] hover:bg-[#152540] text-[#facc15] border-[#facc15]/30 shadow-[0_0_10px_rgba(250,204,21,0.15)]'
-                : 'bg-white hover:bg-slate-50 text-[#dc2626] border-[#ef4444]/40 shadow-sm'
+                ? 'bg-[#0d1829] hover:bg-[#152540] text-cyan-300 border-cyan-500/30 shadow-[0_0_10px_rgba(6,182,212,0.15)]'
+                : 'bg-white hover:bg-slate-50 text-cyan-600 border-cyan-500/40 shadow-sm'
             }`}
             title="Download Resume PDF"
           >
-            <FileDown className="w-3.5 h-3.5 text-[#ef4444]" />
+            <FileDown className="w-3.5 h-3.5 text-cyan-400" />
             <span>Resume</span>
           </a>
 
@@ -152,10 +154,10 @@ export default function Navbar() {
             socialItems={socialItems}
             displaySocials={true}
             displayItemNumbering={true}
-            colors={['#facc15', '#fb923c', '#ef4444']}
-            accentColor="#facc15"
+            colors={['#06b6d4', '#0ea5e9', '#3b82f6']}
+            accentColor="#06b6d4"
             menuButtonColor={isDark ? '#e9e9ef' : '#0f172a'}
-            openMenuButtonColor="#facc15"
+            openMenuButtonColor="#06b6d4"
             changeMenuColorOnOpen={true}
             closeOnClickAway={true}
           />

@@ -12,11 +12,24 @@
   display: block;
   width: 100%;
   height: var(--stroke-text-height, 160px);
-  max-width: 100%;
-  overflow: visible;
 }
 
 .stroke-text__stroke,
 .stroke-text__fill {
   user-select: none;
 }
+
+.hero-stroke-text {
+  width: 100vw;
+  max-width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-stroke-text .stroke-text__svg {
+  width: 100vw;
+  max-width: 100vw;
+  height: clamp(130px, 21vw, 360px);
+}
+

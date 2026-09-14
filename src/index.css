@@ -7,18 +7,18 @@
     --bg-card: rgba(15, 20, 32, 0.75);
     --bg-card-hover: rgba(26, 26, 40, 0.9);
     --border-subtle: rgba(255, 255, 255, 0.08);
-    --border-accent: rgba(250, 204, 21, 0.35);
+    --border-accent: rgba(6, 182, 212, 0.35);
     
     --text-primary: #f8fafc;
     --text-secondary: #94a3b8;
     --text-muted: #64748b;
 
-    --accent-yellow: #facc15;
-    --accent-amber: #f59e0b;
-    --accent-orange: #f97316;
-    --accent-red: #ef4444;
+    --accent-yellow: #06b6d4;
+    --accent-amber: #0ea5e9;
+    --accent-orange: #3b82f6;
+    --accent-red: #2563eb;
 
-    --glow-accent: 0 0 25px rgba(250, 204, 21, 0.25);
+    --glow-accent: 0 0 25px rgba(6, 182, 212, 0.25);
     --glow-card: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
   }
 
@@ -28,18 +28,18 @@
     --bg-card: rgba(255, 255, 255, 0.9);
     --bg-card-hover: rgba(255, 255, 255, 1);
     --border-subtle: rgba(15, 23, 42, 0.08);
-    --border-accent: rgba(239, 68, 68, 0.35);
+    --border-accent: rgba(2, 132, 199, 0.35);
     
     --text-primary: #0f172a;
     --text-secondary: #334155;
     --text-muted: #64748b;
 
-    --accent-yellow: #ca8a04;
-    --accent-amber: #d97706;
-    --accent-orange: #ea580c;
-    --accent-red: #dc2626;
+    --accent-yellow: #0284c7;
+    --accent-amber: #0369a1;
+    --accent-orange: #1d4ed8;
+    --accent-red: #1e40af;
 
-    --glow-accent: 0 0 20px rgba(239, 68, 68, 0.15);
+    --glow-accent: 0 0 20px rgba(2, 132, 199, 0.15);
     --glow-card: 0 10px 30px -10px rgba(0, 0, 0, 0.06);
   }
 
@@ -69,13 +69,13 @@
     border-radius: 9999px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #ef4444;
+    background: #06b6d4;
   }
 }
 
 /* Glassmorphism & Cyber Accents - Dark Mode Defaults */
 .glass-panel {
-  background: rgba(15, 18, 28, 0.7);
+  background: rgba(15, 18, 28, 0.75);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -91,12 +91,11 @@
 }
 
 .glass-card:hover {
-  border-color: rgba(250, 204, 21, 0.4);
-  box-shadow: 0 14px 40px -10px rgba(239, 68, 68, 0.18);
+  border-color: rgba(6, 182, 212, 0.4);
+  box-shadow: 0 14px 40px -10px rgba(6, 182, 212, 0.15);
   transform: translateY(-2px);
 }
 
-/* Light Mode Overrides for Glass Cards & Panels */
 /* Light Mode Overrides for Glass Cards & Panels */
 html.light .glass-panel {
   background: rgba(255, 255, 255, 0.95);
@@ -111,8 +110,8 @@ html.light .glass-card {
 }
 
 html.light .glass-card:hover {
-  border-color: rgba(239, 68, 68, 0.4) !important;
-  box-shadow: 0 14px 40px -10px rgba(250, 204, 21, 0.18) !important;
+  border-color: rgba(2, 132, 199, 0.4) !important;
+  box-shadow: 0 14px 40px -10px rgba(2, 132, 199, 0.15) !important;
 }
 
 /* =========================================================
@@ -267,8 +266,8 @@ html.light .bg-grid-pattern {
 }
 
 html.light .bg-radial-vignette {
-  background: radial-gradient(circle at 50% 10%, rgba(250, 204, 21, 0.07) 0%, transparent 60%),
-              radial-gradient(circle at 80% 50%, rgba(239, 68, 68, 0.05) 0%, transparent 50%);
+  background: radial-gradient(circle at 50% 10%, rgba(2, 132, 199, 0.07) 0%, transparent 60%),
+              radial-gradient(circle at 80% 50%, rgba(37, 99, 235, 0.05) 0%, transparent 50%);
 }
 
 /* Gradient text utilities */
@@ -285,13 +284,13 @@ html.light .text-gradient {
 }
 
 .text-gradient-fire {
-  background: linear-gradient(135deg, #facc15 0%, #f97316 45%, #ef4444 100%);
+  background: linear-gradient(135deg, #38bdf8 0%, #06b6d4 45%, #3b82f6 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 html.light .text-gradient-fire {
-  background: linear-gradient(135deg, #d97706 0%, #ea580c 45%, #dc2626 100%);
+  background: linear-gradient(135deg, #0284c7 0%, #0369a1 45%, #1d4ed8 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

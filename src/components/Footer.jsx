@@ -18,7 +18,7 @@ export default function Footer() {
             {personalInfo.name}
           </span>
           <span className="hidden sm:inline text-slate-600">•</span>
-          <span className="text-xs font-mono text-[#facc15]">
+          <span className="text-xs font-mono text-cyan-400">
             {personalInfo.title}
           </span>
           <span className="hidden sm:inline text-slate-600">•</span>
@@ -33,7 +33,7 @@ export default function Footer() {
             href={personalInfo.socials.github}
             target="_blank"
             rel="noreferrer"
-            className="p-2.5 rounded-xl bg-white/5 hover:bg-[#facc15]/10 text-slate-400 hover:text-[#facc15] border border-white/5 transition-colors"
+            className="p-2.5 rounded-xl bg-white/5 hover:bg-cyan-500/10 text-slate-400 hover:text-cyan-400 border border-white/5 transition-colors"
             aria-label="GitHub Profile"
           >
             <GithubIcon className="w-4 h-4" />
@@ -43,7 +43,7 @@ export default function Footer() {
             href={personalInfo.socials.linkedin}
             target="_blank"
             rel="noreferrer"
-            className="p-2.5 rounded-xl bg-white/5 hover:bg-[#ef4444]/10 text-slate-400 hover:text-[#ef4444] border border-white/5 transition-colors"
+            className="p-2.5 rounded-xl bg-white/5 hover:bg-blue-500/10 text-slate-400 hover:text-blue-400 border border-white/5 transition-colors"
             aria-label="LinkedIn Profile"
           >
             <LinkedinIcon className="w-4 h-4" />

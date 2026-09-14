@@ -8,12 +8,12 @@ export default function Education() {
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#facc15]/10 border border-[#facc15]/20 text-[#facc15] font-mono text-xs uppercase tracking-widest mb-3">
-              <GraduationCap className="w-3.5 h-3.5" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/70 backdrop-blur-xl border border-white/10 text-cyan-400 font-mono text-xs uppercase tracking-widest mb-3 shadow-sm">
+              <GraduationCap className="w-3.5 h-3.5 text-cyan-400" />
               <span>07. Academic Path</span>
             </div>
             <h2 className="text-3xl sm:text-5xl font-black font-display tracking-tight text-white">
-              EDUCATION <span className="bg-gradient-to-r from-[#facc15] via-[#fb923c] to-[#ef4444] bg-clip-text text-transparent">TIMELINE</span>
+              EDUCATION <span className="bg-gradient-to-r from-cyan-400 via-sky-400 to-blue-500 bg-clip-text text-transparent">TIMELINE</span>
             </h2>
           </div>
           <p className="text-xs font-mono text-slate-400 mt-3 md:mt-0">
@@ -21,17 +21,17 @@ export default function Education() {
           </p>
         </div>
 
-        <div className="relative pl-6 sm:pl-8 border-l border-[#facc15]/30 space-y-8">
+        <div className="relative pl-6 sm:pl-8 border-l border-cyan-500/30 space-y-8">
           {educationData.map((edu, idx) => (
             <div key={idx} className="relative">
               {/* Timeline pin */}
-              <div className="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-[#06090f] border-2 border-[#ef4444] flex items-center justify-center">
-                <div className="w-1.5 h-1.5 rounded-full bg-[#facc15] animate-ping" />
+              <div className="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-[#06090f] border-2 border-cyan-400 flex items-center justify-center">
+                <div className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-ping" />
               </div>
 
               <div className="glass-card p-6 sm:p-8 rounded-3xl border border-white/10">
                 <div className="flex flex-wrap items-center justify-between gap-3 mb-3">
-                  <span className="text-xs font-mono font-semibold text-[#facc15] bg-[#facc15]/10 px-3 py-1 rounded-full border border-[#facc15]/20 flex items-center gap-1.5">
+                  <span className="text-xs font-mono font-semibold text-cyan-300 bg-cyan-500/10 px-3 py-1 rounded-full border border-cyan-500/20 flex items-center gap-1.5">
                     <Calendar className="w-3.5 h-3.5" />
                     {edu.period}
                   </span>
@@ -45,14 +45,14 @@ export default function Education() {
                 </h3>
 
                 <div className="flex items-center gap-2 text-sm font-mono text-slate-400 mb-4">
-                  <MapPin className="w-4 h-4 text-[#facc15]" />
+                  <MapPin className="w-4 h-4 text-cyan-400" />
                   <span>{edu.institution} ({edu.location})</span>
                 </div>
 
                 <div className="space-y-2 pt-4 border-t border-white/5">
                   {edu.highlights.map((point, pIdx) => (
                     <div key={pIdx} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-300">
-                      <CheckCircle className="w-4 h-4 text-[#ef4444] shrink-0 mt-0.5" />
+                      <CheckCircle className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
                       <span>{point}</span>
                     </div>
                   ))}

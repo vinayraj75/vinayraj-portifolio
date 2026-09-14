@@ -8,12 +8,12 @@ export default function Achievements() {
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-amber-400/10 border border-amber-400/20 text-amber-400 font-mono text-xs uppercase tracking-widest mb-3">
-              <Trophy className="w-3.5 h-3.5" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/70 backdrop-blur-xl border border-white/10 text-cyan-400 font-mono text-xs uppercase tracking-widest mb-3 shadow-sm">
+              <Trophy className="w-3.5 h-3.5 text-cyan-400" />
               <span>06. Distinctions</span>
             </div>
             <h2 className="text-3xl sm:text-5xl font-black font-display tracking-tight text-white">
-              HONORS & <span className="bg-gradient-to-r from-amber-300 via-amber-400 to-yellow-400 bg-clip-text text-transparent">AWARDS</span>
+              HONORS &amp; <span className="bg-gradient-to-r from-cyan-400 via-sky-400 to-blue-500 bg-clip-text text-transparent">AWARDS</span>
             </h2>
           </div>
           <p className="text-xs font-mono text-slate-400 mt-3 md:mt-0">
@@ -25,16 +25,16 @@ export default function Achievements() {
           {achievementsData.map((item, idx) => (
             <div
               key={idx}
-              className="glass-card p-7 rounded-3xl border border-amber-400/25 relative overflow-hidden group bg-gradient-to-br from-[#131b2e] via-[#0d1424] to-[#070b16]"
+              className="glass-card p-7 rounded-3xl border border-cyan-500/25 relative overflow-hidden group bg-gradient-to-br from-[#131b2e] via-[#0d1424] to-[#070b16]"
             >
-              <div className="absolute top-0 right-0 w-36 h-36 bg-amber-400/5 rounded-bl-full pointer-events-none group-hover:bg-amber-400/10 transition-colors" />
+              <div className="absolute top-0 right-0 w-36 h-36 bg-cyan-500/5 rounded-bl-full pointer-events-none group-hover:bg-cyan-500/10 transition-colors" />
 
               <div className="flex items-center gap-4 mb-4">
-                <div className="w-12 h-12 rounded-2xl bg-amber-400/10 border border-amber-400/30 flex items-center justify-center text-amber-300 group-hover:scale-110 transition-transform">
+                <div className="w-12 h-12 rounded-2xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-300 group-hover:scale-110 transition-transform">
                   <Trophy className="w-6 h-6" />
                 </div>
                 <div>
-                  <span className="text-[10px] font-mono uppercase tracking-widest text-amber-400 bg-amber-400/10 px-2 py-0.5 rounded border border-amber-400/20">
+                  <span className="text-[10px] font-mono uppercase tracking-widest text-cyan-400 bg-cyan-500/10 px-2.5 py-0.5 rounded-full border border-cyan-500/20">
                     {item.badge}
                   </span>
                   <p className="text-xs font-mono text-slate-400 mt-1">
@@ -53,7 +53,7 @@ export default function Achievements() {
 
               <div className="pt-3 border-t border-white/5 flex items-center justify-between text-xs font-mono text-slate-400">
                 <span>Category: <strong className="text-white">Technical Innovation</strong></span>
-                <span className="text-amber-400 flex items-center gap-1">
+                <span className="text-cyan-400 flex items-center gap-1">
                   <Sparkles className="w-3.5 h-3.5" />
                   Official Award
                 </span>
@@ -65,11 +65,11 @@ export default function Achievements() {
           <div className="glass-card p-7 rounded-3xl border border-white/10 flex flex-col justify-between">
             <div>
               <div className="flex items-center gap-4 mb-4">
-                <div className="w-12 h-12 rounded-2xl bg-[#facc15]/10 border border-[#facc15]/30 flex items-center justify-center text-[#facc15]">
+                <div className="w-12 h-12 rounded-2xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400">
                   <Star className="w-6 h-6" />
                 </div>
                 <div>
-                  <span className="text-[10px] font-mono uppercase tracking-widest text-[#facc15] bg-[#facc15]/10 px-2 py-0.5 rounded border border-[#facc15]/20">
+                  <span className="text-[10px] font-mono uppercase tracking-widest text-cyan-300 bg-cyan-500/10 px-2.5 py-0.5 rounded-full border border-cyan-500/20">
                     ACADEMIC EXCELLENCE
                   </span>
                   <p className="text-xs font-mono text-slate-400 mt-1">
@@ -89,7 +89,7 @@ export default function Achievements() {
 
             <div className="pt-4 mt-4 border-t border-white/5 flex items-center justify-between text-xs font-mono text-slate-400">
               <span>Ramachandra College of Eng.</span>
-              <span className="text-[#facc15] font-semibold">Active Curriculum</span>
+              <span className="text-cyan-400 font-semibold">Active Curriculum</span>
             </div>
           </div>
         </div>

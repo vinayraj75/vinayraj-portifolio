@@ -1,4 +1,4 @@
-import React, { useEffect, useId, useLayoutEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useId, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -10,7 +10,7 @@ if (typeof window !== 'undefined') {
 
 const DEFAULT_TEXT = 'Draw Attention';
 
-export const StrokeText = ({
+const StrokeText = ({
   text = DEFAULT_TEXT,
   strokeColor = '#A78BFA',
   fillColor = '#F8FAFC',
@@ -24,8 +24,6 @@ export const StrokeText = ({
   fontSize = 128,
   fontWeight = 800,
   letterSpacing = -4,
-  fontFamily = "'Space Grotesk', system-ui, sans-serif",
-  preserveAspectRatio = 'xMinYMid meet',
   reverse = false,
   className = '',
   style = {}
@@ -45,12 +43,11 @@ export const StrokeText = ({
 
   const fontStyle = useMemo(
     () => ({
-      fontFamily,
       fontSize: `${fontSize}px`,
       fontWeight,
       letterSpacing: `${letterSpacing}px`
     }),
-    [fontFamily, fontSize, fontWeight, letterSpacing]
+    [fontSize, fontWeight, letterSpacing]
   );
 
   useLayoutEffect(() => {
@@ -95,7 +92,7 @@ export const StrokeText = ({
     return () => {
       cancelled = true;
     };
-  }, [characters, fontSize, fontWeight, letterSpacing, strokeWidth, fontFamily]);
+  }, [characters, fontSize, fontWeight, letterSpacing, strokeWidth]);
 
   useEffect(() => {
     const root = rootRef.current;
@@ -201,18 +198,23 @@ export const StrokeText = ({
     <span
       ref={rootRef}
       className={`stroke-text ${trigger === 'hover' ? 'stroke-text--hover' : ''} ${className}`.trim()}
-      style={{ ...style, '--stroke-text-height': `${Math.round(fontSize * 1.25)}px` }}
+      style={{ ...style, '--stroke-text-height': `${Math.round(fontSize * 1.3)}px` }}
       role="img"
       aria-label={String(text ?? '')}
     >
-      <svg className="stroke-text__svg" viewBox={viewBox} preserveAspectRatio={preserveAspectRatio} aria-hidden="true">
-        {fillMode === 'wipe' && box && (
-          <defs>
+      <svg className="stroke-text__svg" viewBox={viewBox} preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+        <defs>
+          <linearGradient id="developer-silver-grad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor="#ffffff" />
+            <stop offset="50%" stopColor="#e2e8f0" />
+            <stop offset="100%" stopColor="#94a3b8" />
+          </linearGradient>
+          {fillMode === 'wipe' && box && (
             <clipPath id={wipeId} clipPathUnits="userSpaceOnUse">
               <rect ref={wipeRectRef} x={box.x} y={box.y} width="0" height={box.height} />
             </clipPath>
-          </defs>
-        )}
+          )}
+        </defs>
 
         <text
           ref={strokeTextRef}
