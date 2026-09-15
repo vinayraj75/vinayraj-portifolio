@@ -1,12 +1,19 @@
 import React from 'react';
 import { GraduationCap, Calendar, MapPin, CheckCircle, BookOpen } from 'lucide-react';
 import { educationData } from '../data/portfolioData';
+import useIntersectionObserver from '../hooks/useIntersectionObserver';
 
 export default function Education() {
+  const [sectionRef, isVisible] = useIntersectionObserver({ threshold: 0.1, triggerOnce: true });
+
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 relative border-t border-white/5">
+    <section ref={sectionRef} className="py-20 px-4 sm:px-6 lg:px-8 relative border-t border-white/5">
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
+        <div
+          className={`flex flex-col md:flex-row md:items-end justify-between mb-12 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}
+        >
           <div>
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/70 backdrop-blur-xl border border-white/10 text-cyan-400 font-mono text-xs uppercase tracking-widest mb-3 shadow-sm">
               <GraduationCap className="w-3.5 h-3.5 text-cyan-400" />
@@ -23,7 +30,15 @@ export default function Education() {
 
         <div className="relative pl-6 sm:pl-8 border-l border-cyan-500/30 space-y-8">
           {educationData.map((edu, idx) => (
-            <div key={idx} className="relative">
+            <div
+              key={idx}
+              style={{
+                transitionDelay: isVisible ? `${150 + idx * 150}ms` : '0ms',
+              }}
+              className={`relative transition-all duration-700 ${
+                isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-6'
+              }`}
+            >
               {/* Timeline pin */}
               <div className="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-[#06090f] border-2 border-cyan-400 flex items-center justify-center">
                 <div className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-ping" />

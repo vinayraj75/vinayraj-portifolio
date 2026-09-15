@@ -1,17 +1,23 @@
 import React from 'react';
 import { Award, CheckCircle, ExternalLink, ShieldCheck, BookMarked, Sparkles } from 'lucide-react';
 import { certificationsData } from '../data/portfolioData';
+import useIntersectionObserver from '../hooks/useIntersectionObserver';
 
 export default function Certifications() {
+  const [sectionRef, isVisible] = useIntersectionObserver({ threshold: 0.1, triggerOnce: true });
   const featured = certificationsData.find(c => c.featured);
   const others = certificationsData.filter(c => !c.featured);
 
   return (
-    <section id="certifications" className="py-24 px-4 sm:px-6 lg:px-8 relative">
+    <section ref={sectionRef} id="certifications" className="py-24 px-4 sm:px-6 lg:px-8 relative">
       <div className="max-w-7xl mx-auto">
         
         {/* Section Header with Frosted Glass Back */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
+        <div
+          className={`flex flex-col md:flex-row md:items-end justify-between mb-12 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}
+        >
           <div>
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/70 backdrop-blur-xl border border-white/10 text-cyan-400 font-mono text-xs uppercase tracking-widest mb-3 shadow-sm">
               <Award className="w-3.5 h-3.5 text-cyan-400" />
@@ -28,7 +34,11 @@ export default function Certifications() {
 
         {/* Featured Card: NPTEL Elite */}
         {featured && (
-          <div className="glass-card rounded-3xl p-7 sm:p-9 border border-cyan-500/30 mb-8 relative overflow-hidden bg-gradient-to-br from-[#0c192f] via-[#091122] to-[#06090f]">
+          <div
+            className={`glass-card rounded-3xl p-7 sm:p-9 border border-cyan-500/30 mb-8 relative overflow-hidden bg-gradient-to-br from-[#0c192f] via-[#091122] to-[#06090f] transition-all duration-700 delay-100 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            }`}
+          >
             <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
 
             <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
@@ -93,15 +103,24 @@ export default function Certifications() {
         )}
 
         {/* Other Technical Certifications */}
-        <h4 className="text-sm font-mono uppercase tracking-widest text-slate-400 mb-4 font-semibold">
+        <h4
+          className={`text-sm font-mono uppercase tracking-widest text-slate-400 mb-4 font-semibold transition-all duration-700 delay-200 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+          }`}
+        >
           Additional Specialized Curriculum &amp; Foundations
         </h4>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {others.map((cert) => (
+          {others.map((cert, idx) => (
             <div
               key={cert.id}
-              className="glass-card p-5 rounded-2xl border border-white/5 hover:border-cyan-500/30 transition-all flex flex-col justify-between"
+              style={{
+                transitionDelay: isVisible ? `${250 + idx * 80}ms` : '0ms',
+              }}
+              className={`glass-card p-5 rounded-2xl border border-white/5 hover:border-cyan-500/30 transition-all duration-500 flex flex-col justify-between ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              }`}
             >
               <div>
                 <div className="flex items-center justify-between gap-2 mb-3">

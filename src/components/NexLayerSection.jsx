@@ -13,6 +13,7 @@ import {
   Briefcase,
 } from 'lucide-react';
 import { experience } from '../data/portfolioData';
+import useIntersectionObserver from '../hooks/useIntersectionObserver';
 
 // Mapping for minimal responsibility icons
 const iconMap = {
@@ -25,6 +26,7 @@ const iconMap = {
 };
 
 export default function NexLayerSection() {
+  const [sectionRef, isSectionVisible] = useIntersectionObserver({ threshold: 0.1, triggerOnce: true });
   const shouldReduceMotion = useReducedMotion();
   const [logoError, setLogoError] = useState(false);
 
@@ -93,6 +95,7 @@ export default function NexLayerSection() {
 
   return (
     <section
+      ref={sectionRef}
       id="experience"
       aria-labelledby="experience-heading"
       className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden selection:bg-cyan-500/20 selection:text-cyan-300"

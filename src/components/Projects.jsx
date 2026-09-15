@@ -3,16 +3,22 @@ import { Sparkles, ArrowUpRight, FolderGit2, Cpu, Eye } from 'lucide-react';
 import { projectsData } from '../data/portfolioData';
 import { GithubIcon } from './Icons';
 import ProjectModal from './ProjectModal';
+import useIntersectionObserver from '../hooks/useIntersectionObserver';
 
 export default function Projects() {
+  const [sectionRef, isVisible] = useIntersectionObserver({ threshold: 0.1, triggerOnce: true });
   const [selectedProject, setSelectedProject] = useState(null);
 
   return (
-    <section id="projects" className="py-24 px-4 sm:px-6 lg:px-8 relative">
+    <section ref={sectionRef} id="projects" className="py-24 px-4 sm:px-6 lg:px-8 relative">
       <div className="max-w-7xl mx-auto">
         
         {/* Section Header with Frosted Glass Back */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-14">
+        <div
+          className={`flex flex-col md:flex-row md:items-end justify-between mb-14 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}
+        >
           <div>
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/70 backdrop-blur-xl border border-white/10 text-cyan-400 font-mono text-xs uppercase tracking-widest mb-3 shadow-sm">
               <FolderGit2 className="w-3.5 h-3.5 text-cyan-400" />
@@ -32,7 +38,12 @@ export default function Projects() {
           {projectsData.map((project, idx) => (
             <div
               key={project.id}
-              className="glass-card rounded-3xl p-7 border border-white/10 hover:border-cyan-500/40 transition-all flex flex-col justify-between relative group overflow-hidden"
+              style={{
+                transitionDelay: isVisible ? `${idx * 120}ms` : '0ms',
+              }}
+              className={`glass-card rounded-3xl p-7 border border-white/10 hover:border-cyan-500/40 transition-all duration-700 flex flex-col justify-between relative group overflow-hidden ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+              }`}
             >
               {/* Top ambient accent glow */}
               <div className="absolute top-0 right-0 w-48 h-48 bg-cyan-500/5 rounded-full blur-3xl pointer-events-none group-hover:bg-cyan-500/10 transition-colors" />

@@ -1,9 +1,11 @@
 import React from 'react';
 import { GraduationCap, MapPin, Award, BookOpen, Layers, Terminal, Sparkles, CheckCircle2 } from 'lucide-react';
-import { motion } from 'framer-motion';
 import { personalInfo, currentStatus } from '../data/portfolioData';
+import useIntersectionObserver from '../hooks/useIntersectionObserver';
 
 export default function About() {
+  const [sectionRef, isVisible] = useIntersectionObserver({ threshold: 0.1, triggerOnce: true });
+
   const infoCards = [
     { label: 'Degree', value: 'B.Tech — AIML', icon: GraduationCap, detail: '2024 — 2028 (3rd Year)' },
     { label: 'College', value: 'Ramachandra College of Eng.', icon: BookOpen, detail: 'Eluru, Andhra Pradesh' },
@@ -12,11 +14,15 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="py-24 px-4 sm:px-6 lg:px-8 relative">
+    <section ref={sectionRef} id="about" className="py-24 px-4 sm:px-6 lg:px-8 relative">
       <div className="max-w-7xl mx-auto">
         
         {/* Section Header with Frosted Glass Back */}
-        <div className="mb-14">
+        <div
+          className={`mb-14 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}
+        >
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/70 backdrop-blur-xl border border-white/10 text-cyan-400 font-mono text-xs uppercase tracking-widest mb-3 shadow-sm">
             <Layers className="w-3.5 h-3.5 text-cyan-400" />
             <span>01. Foundation</span>
@@ -29,7 +35,11 @@ export default function About() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           
           {/* Main Biography Column */}
-          <div className="lg:col-span-7 space-y-6">
+          <div
+            className={`lg:col-span-7 space-y-6 transition-all duration-700 delay-100 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            }`}
+          >
             <div className="glass-card p-6 sm:p-8 rounded-2xl relative overflow-hidden border border-white/10">
               <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/5 rounded-bl-full pointer-events-none" />
               
@@ -61,7 +71,14 @@ export default function About() {
                 return (
                   <div
                     key={card.label}
-                    className={`glass-card p-5 rounded-xl border border-white/5 ${isBlue ? 'hover:border-blue-500/40' : 'hover:border-cyan-500/40'} transition-all group`}
+                    style={{
+                      transitionDelay: isVisible ? `${200 + idx * 80}ms` : '0ms',
+                    }}
+                    className={`glass-card p-5 rounded-xl border border-white/5 ${
+                      isBlue ? 'hover:border-blue-500/40' : 'hover:border-cyan-500/40'
+                    } transition-all duration-500 group ${
+                      isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+                    }`}
                   >
                     <div className="flex items-center gap-3 mb-2">
                       <div className={`p-2 rounded-lg ${isBlue ? 'bg-blue-500/10 text-blue-400' : 'bg-cyan-500/10 text-cyan-400'} group-hover:scale-110 transition-transform`}>
@@ -84,7 +101,11 @@ export default function About() {
           </div>
 
           {/* Right Column: Currently Building & Learning */}
-          <div className="lg:col-span-5 space-y-6">
+          <div
+            className={`lg:col-span-5 space-y-6 transition-all duration-700 delay-200 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            }`}
+          >
             
             {/* Currently Building Card */}
             <div className="glass-card p-6 rounded-2xl border border-cyan-500/20 relative overflow-hidden">

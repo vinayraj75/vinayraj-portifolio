@@ -17,6 +17,7 @@ import { VscTerminal } from 'react-icons/vsc';
 import { TbBrain } from 'react-icons/tb';
 import LogoLoop from './LogoLoop';
 import { useTheme } from '../utils/ThemeContext';
+import useIntersectionObserver from '../hooks/useIntersectionObserver';
 
 const row1 = [
   { node: <SiPython />,      title: 'Python',          color: '#3B82F6' },
@@ -49,17 +50,25 @@ const styledLogos = (items) =>
 
 export default function TechMarquee() {
   const { isDark } = useTheme();
+  const [sectionRef, isVisible] = useIntersectionObserver({ threshold: 0.1, triggerOnce: true });
 
   const fadeColor = isDark ? '#07090f' : '#fbfbfb';
   const labelColor = isDark ? '#64748b' : '#94a3b8';
 
   return (
     <section
-      className="tech-marquee-section py-14 px-0 relative overflow-hidden border-y"
+      ref={sectionRef}
+      className={`tech-marquee-section py-14 px-0 relative overflow-hidden border-y transition-opacity duration-1000 ${
+        isVisible ? 'opacity-100' : 'opacity-0'
+      }`}
       aria-label="Technology marquee"
     >
       {/* Header */}
-      <div className="text-center mb-10 px-4">
+      <div
+        className={`text-center mb-10 px-4 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        }`}
+      >
         <div className="section-label-badge inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full font-mono text-xs uppercase tracking-widest mb-3 shadow-sm text-cyan-400">
           <span>TOOLS &amp; ECOSYSTEM</span>
         </div>

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Code, Brain, Server, Globe, CheckCircle, Flame, Sparkles, ShieldCheck } from 'lucide-react';
 import { skillsData, coreStrengths } from '../data/portfolioData';
+import useIntersectionObserver from '../hooks/useIntersectionObserver';
 
 const categories = [
   { key: 'all', label: 'All Skills', icon: Flame },
@@ -11,6 +12,7 @@ const categories = [
 ];
 
 export default function Skills() {
+  const [sectionRef, isVisible] = useIntersectionObserver({ threshold: 0.1, triggerOnce: true });
   const [activeTab, setActiveTab] = useState('all');
 
   const getAllSkills = () => {
@@ -40,11 +42,15 @@ export default function Skills() {
   };
 
   return (
-    <section id="skills" className="py-24 px-4 sm:px-6 lg:px-8 relative">
+    <section ref={sectionRef} id="skills" className="py-24 px-4 sm:px-6 lg:px-8 relative">
       <div className="max-w-7xl mx-auto">
         
         {/* Section Header with Frosted Glass Back */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
+        <div
+          className={`flex flex-col md:flex-row md:items-end justify-between mb-12 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}
+        >
           <div>
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/70 backdrop-blur-xl border border-white/10 text-cyan-400 font-mono text-xs uppercase tracking-widest mb-3 shadow-sm">
               <Brain className="w-3.5 h-3.5 text-cyan-400" />
@@ -60,7 +66,11 @@ export default function Skills() {
         </div>
 
         {/* Filter Tabs */}
-        <div className="flex flex-wrap gap-2 mb-10 pb-2 border-b border-white/5">
+        <div
+          className={`flex flex-wrap gap-2 mb-10 pb-2 border-b border-white/5 transition-all duration-700 delay-100 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+          }`}
+        >
           {categories.map((cat) => {
             const Icon = cat.icon;
             const isActive = activeTab === cat.key;
@@ -86,7 +96,12 @@ export default function Skills() {
           {displayedSkills.map((skill, idx) => (
             <div
               key={`${skill.name}-${idx}`}
-              className="glass-card p-6 rounded-2xl border border-white/5 hover:border-cyan-500/40 transition-all flex flex-col justify-between group"
+              style={{
+                transitionDelay: isVisible ? `${Math.min(idx * 40, 400)}ms` : '0ms',
+              }}
+              className={`glass-card p-6 rounded-2xl border border-white/5 hover:border-cyan-500/40 transition-all duration-500 flex flex-col justify-between group ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+              }`}
             >
               <div>
                 <div className="flex items-start justify-between gap-3 mb-3">
@@ -118,7 +133,11 @@ export default function Skills() {
         </div>
 
         {/* Core Strengths from Resume */}
-        <div className="mt-10 p-6 rounded-2xl glass-card border border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <div
+          className={`mt-10 p-6 rounded-2xl glass-card border border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 transition-all duration-700 delay-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+          }`}
+        >
           <div>
             <span className="text-xs font-mono uppercase tracking-widest text-cyan-400 font-bold block mb-1">
               ENGINEERING CORE STRENGTHS

@@ -2,8 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { Star, GitFork, ExternalLink, Code2, Sparkles, Terminal } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData';
 import { GithubIcon } from './Icons';
+import useIntersectionObserver from '../hooks/useIntersectionObserver';
 
 export default function GithubSection() {
+  const [sectionRef, isVisible] = useIntersectionObserver({ threshold: 0.1, triggerOnce: true });
   const [profile, setProfile] = useState(null);
   const [repos, setRepos] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -76,11 +78,15 @@ export default function GithubSection() {
   const displayRepos = repos.length > 0 ? repos : fallbackRepos;
 
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 relative border-t border-white/5">
+    <section ref={sectionRef} className="py-24 px-4 sm:px-6 lg:px-8 relative border-t border-white/5">
       <div className="max-w-7xl mx-auto">
         
         {/* Section Header with Frosted Glass Back */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
+        <div
+          className={`flex flex-col md:flex-row md:items-end justify-between mb-12 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}
+        >
           <div>
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/70 backdrop-blur-xl border border-white/10 text-cyan-400 font-mono text-xs uppercase tracking-widest mb-3 shadow-sm">
               <GithubIcon className="w-3.5 h-3.5 text-cyan-400" />
@@ -104,7 +110,11 @@ export default function GithubSection() {
         </div>
 
         {/* Profile Stats Bar */}
-        <div className="glass-card p-6 rounded-3xl border border-white/10 mb-8 flex flex-wrap items-center justify-between gap-6 bg-gradient-to-r from-[#091122] to-[#070b16]">
+        <div
+          className={`glass-card p-6 rounded-3xl border border-white/10 mb-8 flex flex-wrap items-center justify-between gap-6 bg-gradient-to-r from-[#091122] to-[#070b16] transition-all duration-700 delay-100 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}
+        >
           <div className="flex items-center gap-4">
             <div className="w-14 h-14 rounded-2xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400">
               <Terminal className="w-7 h-7" />
@@ -142,7 +152,12 @@ export default function GithubSection() {
               href={repo.html_url || personalInfo.socials.github}
               target="_blank"
               rel="noreferrer"
-              className="glass-card p-6 rounded-2xl border border-white/5 hover:border-cyan-500/40 transition-all flex flex-col justify-between group"
+              style={{
+                transitionDelay: isVisible ? `${200 + idx * 80}ms` : '0ms',
+              }}
+              className={`glass-card p-6 rounded-2xl border border-white/5 hover:border-cyan-500/40 transition-all duration-500 flex flex-col justify-between group ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              }`}
             >
               <div>
                 <div className="flex items-center justify-between gap-3 mb-2.5">

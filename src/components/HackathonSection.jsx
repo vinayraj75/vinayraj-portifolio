@@ -1,12 +1,19 @@
 import React from 'react';
 import { Trophy, Users, Zap, Shield, Sparkles } from 'lucide-react';
 import { hackathonsData, personalInfo } from '../data/portfolioData';
+import useIntersectionObserver from '../hooks/useIntersectionObserver';
 
 export default function HackathonSection() {
+  const [sectionRef, isVisible] = useIntersectionObserver({ threshold: 0.1, triggerOnce: true });
+
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 relative bg-[#070d19]/40 border-t border-white/5">
+    <section ref={sectionRef} className="py-20 px-4 sm:px-6 lg:px-8 relative bg-[#070d19]/40 border-t border-white/5">
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
+        <div
+          className={`flex flex-col md:flex-row md:items-end justify-between mb-12 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}
+        >
           <div>
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/70 backdrop-blur-xl border border-white/10 text-cyan-400 font-mono text-xs uppercase tracking-widest mb-3 shadow-sm">
               <Trophy className="w-3.5 h-3.5 text-cyan-400" />
@@ -25,7 +32,11 @@ export default function HackathonSection() {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
           {/* Main Prakalp Achievement Card */}
-          <div className="lg:col-span-8 glass-card rounded-3xl p-7 sm:p-8 border border-cyan-500/30 relative overflow-hidden bg-gradient-to-br from-[#131b2e] via-[#0d1424] to-[#080d1a]">
+          <div
+            className={`lg:col-span-8 glass-card rounded-3xl p-7 sm:p-8 border border-cyan-500/30 relative overflow-hidden bg-gradient-to-br from-[#131b2e] via-[#0d1424] to-[#080d1a] transition-all duration-700 delay-100 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            }`}
+          >
             <div className="absolute -top-10 -right-10 w-48 h-48 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
 
             <div className="flex items-center gap-3 mb-4">
@@ -63,7 +74,11 @@ export default function HackathonSection() {
           </div>
 
           {/* Side Card: Hackathon Culture */}
-          <div className="lg:col-span-4 glass-card rounded-3xl p-7 border border-white/10 flex flex-col justify-between">
+          <div
+            className={`lg:col-span-4 glass-card rounded-3xl p-7 border border-white/10 flex flex-col justify-between transition-all duration-700 delay-200 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            }`}
+          >
             <div>
               <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-cyan-400 mb-3">
                 <Zap className="w-4 h-4" />

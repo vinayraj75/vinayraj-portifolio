@@ -22,26 +22,37 @@ export default function Navbar() {
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 30);
-
-      // Section spy
-      const sections = navItems.map(item => item.href.substring(1));
-      const scrollPosition = window.scrollY + 200;
-
-      for (const section of sections) {
-        const el = document.getElementById(section);
-        if (el) {
-          const top = el.offsetTop;
-          const height = el.offsetHeight;
-          if (scrollPosition >= top && scrollPosition < top + height) {
-            setActiveSection(section);
-            break;
-          }
-        }
-      }
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    handleScroll();
+
+    // High performance section spy via Intersection Observer
+    const sectionIds = navItems.map(item => item.href.substring(1));
+    const sectionElements = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
+
+    let observer;
+    if (sectionElements.length > 0 && typeof IntersectionObserver !== 'undefined') {
+      observer = new IntersectionObserver(
+        (entries) => {
+          const visibleEntry = entries.find(entry => entry.isIntersecting);
+          if (visibleEntry) {
+            setActiveSection(visibleEntry.target.id);
+          }
+        },
+        {
+          rootMargin: '-25% 0px -55% 0px',
+          threshold: 0,
+        }
+      );
+
+      sectionElements.forEach(el => observer.observe(el));
+    }
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (observer) observer.disconnect();
+    };
   }, []);
 
   const handleNavClick = (e, href) => {

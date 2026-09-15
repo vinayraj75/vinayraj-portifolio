@@ -1,12 +1,19 @@
 import React from 'react';
 import { Award, Trophy, Star, CheckCircle, Sparkles } from 'lucide-react';
 import { achievementsData } from '../data/portfolioData';
+import useIntersectionObserver from '../hooks/useIntersectionObserver';
 
 export default function Achievements() {
+  const [sectionRef, isVisible] = useIntersectionObserver({ threshold: 0.1, triggerOnce: true });
+
   return (
-    <section id="achievements" className="py-20 px-4 sm:px-6 lg:px-8 relative">
+    <section ref={sectionRef} id="achievements" className="py-20 px-4 sm:px-6 lg:px-8 relative">
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
+        <div
+          className={`flex flex-col md:flex-row md:items-end justify-between mb-12 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}
+        >
           <div>
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/70 backdrop-blur-xl border border-white/10 text-cyan-400 font-mono text-xs uppercase tracking-widest mb-3 shadow-sm">
               <Trophy className="w-3.5 h-3.5 text-cyan-400" />
@@ -25,7 +32,12 @@ export default function Achievements() {
           {achievementsData.map((item, idx) => (
             <div
               key={idx}
-              className="glass-card p-7 rounded-3xl border border-cyan-500/25 relative overflow-hidden group bg-gradient-to-br from-[#131b2e] via-[#0d1424] to-[#070b16]"
+              style={{
+                transitionDelay: isVisible ? `${100 + idx * 100}ms` : '0ms',
+              }}
+              className={`glass-card p-7 rounded-3xl border border-cyan-500/25 relative overflow-hidden group bg-gradient-to-br from-[#131b2e] via-[#0d1424] to-[#070b16] transition-all duration-700 ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              }`}
             >
               <div className="absolute top-0 right-0 w-36 h-36 bg-cyan-500/5 rounded-bl-full pointer-events-none group-hover:bg-cyan-500/10 transition-colors" />
 
@@ -62,7 +74,14 @@ export default function Achievements() {
           ))}
 
           {/* Academic Specialization Card */}
-          <div className="glass-card p-7 rounded-3xl border border-white/10 flex flex-col justify-between">
+          <div
+            style={{
+              transitionDelay: isVisible ? `${100 + achievementsData.length * 100}ms` : '0ms',
+            }}
+            className={`glass-card p-7 rounded-3xl border border-white/10 flex flex-col justify-between transition-all duration-700 ${
+              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            }`}
+          >
             <div>
               <div className="flex items-center gap-4 mb-4">
                 <div className="w-12 h-12 rounded-2xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400">

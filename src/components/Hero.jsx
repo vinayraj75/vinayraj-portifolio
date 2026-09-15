@@ -7,10 +7,12 @@ import profilePhoto from '../assets/profile/profile.png';
 import { useTheme } from '../utils/ThemeContext';
 import TextType from './TextType';
 import StrokeText from './StrokeText';
+import useIntersectionObserver from '../hooks/useIntersectionObserver';
 
 export default function Hero() {
   const { isDark } = useTheme();
   const [mouseOffset, setMouseOffset] = useState({ x: 0, y: 0 });
+  const [heroRef, isHeroVisible] = useIntersectionObserver({ threshold: 0.1, triggerOnce: true });
 
   const handleMouseMove = (e) => {
     const { clientX, clientY } = e;
@@ -20,11 +22,22 @@ export default function Hero() {
     setMouseOffset({ x, y });
   };
 
+  const scrollToAbout = (e) => {
+    e.preventDefault();
+    const target = document.querySelector('#about');
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section
+      ref={heroRef}
       id="home"
       onMouseMove={handleMouseMove}
-      className="relative min-h-screen flex flex-col justify-between pt-24 sm:pt-28 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden bg-[#06090f]"
+      className={`relative min-h-screen flex flex-col justify-between pt-24 sm:pt-28 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden bg-[#06090f] transition-opacity duration-1000 ${
+        isHeroVisible ? 'opacity-100' : 'opacity-0'
+      }`}
     >
       {/* Subtle Ambient Vignette & Backlighting */}
       <div
@@ -243,17 +256,22 @@ export default function Hero() {
         </div>
 
         {/* Scroll To Explore Indicator */}
-        <div className="flex flex-col items-center gap-1.5 mt-8 opacity-70 hover:opacity-100 transition-opacity">
-          <span className="text-[10px] font-mono uppercase tracking-[0.25em] text-slate-400">
+        <a
+          href="#about"
+          onClick={scrollToAbout}
+          className="flex flex-col items-center gap-1.5 mt-8 opacity-70 hover:opacity-100 transition-all cursor-pointer group"
+          aria-label="Scroll down to About section"
+        >
+          <span className="text-[10px] font-mono uppercase tracking-[0.25em] text-slate-400 group-hover:text-cyan-400 transition-colors">
             SCROLL TO EXPLORE
           </span>
           <motion.div
             animate={{ y: [0, 5, 0] }}
             transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}
           >
-            <ArrowDown className="w-4 h-4 text-cyan-400" />
+            <ArrowDown className="w-4 h-4 text-cyan-400 group-hover:translate-y-1 transition-transform" />
           </motion.div>
-        </div>
+        </a>
       </motion.div>
     </section>
   );

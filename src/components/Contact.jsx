@@ -3,8 +3,10 @@ import { Mail, Send, CheckCircle2, MessageSquare, Sparkles, Copy, ArrowUpRight, 
 import { personalInfo } from '../data/portfolioData';
 import { GithubIcon, LinkedinIcon } from './Icons';
 import { useTheme } from '../utils/ThemeContext';
+import useIntersectionObserver from '../hooks/useIntersectionObserver';
 
 export default function Contact() {
+  const [sectionRef, isVisible] = useIntersectionObserver({ threshold: 0.1, triggerOnce: true });
   const { isDark } = useTheme();
   const [formState, setFormState] = useState({ name: '', email: '', message: '' });
   const [copied, setCopied] = useState(false);
@@ -27,7 +29,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-24 px-4 sm:px-6 lg:px-8 relative">
+    <section ref={sectionRef} id="contact" className="py-24 px-4 sm:px-6 lg:px-8 relative">
       {/* Ambient background glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] bg-cyan-500/10 rounded-full blur-[140px] pointer-events-none" />
 
@@ -35,7 +37,11 @@ export default function Contact() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
           
           {/* Left Column: Heading & Social CTAs */}
-          <div className="lg:col-span-6 space-y-6">
+          <div
+            className={`lg:col-span-6 space-y-6 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            }`}
+          >
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/70 backdrop-blur-xl border border-white/10 text-cyan-400 font-mono text-xs uppercase tracking-widest shadow-sm">
               <MessageSquare className="w-3.5 h-3.5 text-cyan-400" />
               <span>10. Get In Touch</span>
@@ -138,7 +144,11 @@ export default function Contact() {
           </div>
 
           {/* Right Column: Direct Message Form Card */}
-          <div className="lg:col-span-6">
+          <div
+            className={`lg:col-span-6 transition-all duration-700 delay-150 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            }`}
+          >
             <div className="glass-card p-7 sm:p-8 rounded-3xl border border-white/10 relative">
               <h3 className="text-xl font-bold font-display text-white mb-1">
                 Send a Message
